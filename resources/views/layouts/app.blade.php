@@ -19,6 +19,30 @@
     .hidden.menu {
     display: none;
     }
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .fullsite.segment {
+        padding: 0;
+        margin-bottom: 20px !important;
+      }
+      .fullsite h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+      .fullsite h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+    }
     </style>
 </head>
 <body class="pushable">
@@ -58,14 +82,18 @@
             <div class="ui inverted fullsite vertical center aligned segment">
 
                 <div class="ui container">
+                
                 <div class="ui large secondary inverted pointing menu">
                     <a class="toc item">
                     <i class="sidebar icon"></i>
                     </a>
+                    
                     <a class="item {{ Request::is('home') ? 'active' : '' }}" href="{{ route('home') }}">Главная</a>
                     <a class="item {{ Request::is('spectehnika/*')  || Request::is('spectehnika') ? 'active' : '' }}" href="{{ route('spectehnika') }}">Спецтехника</a>
                     <a class="item {{ Request::is('parts/*') || Request::is('parts')  ? 'active' : '' }}" href="{{ route('parts') }}">Запасные части</a>
                     <a class="item {{ Request::is('tyres/*')  || Request::is('tyres')  ? 'active' : '' }}" href="{{ route('tyres') }}">Шины</a>                
+                    <div class="toc item right">K700.ASIA</div>
+                    <a class="toc item right" href="tel:87272901335"><i class="phone icon"></i></a>
                 </div>
                 </div>
             </div>
