@@ -18,4 +18,8 @@ class Type extends Model
     {
         return $query->orderBy('id','DESC');
     }
+    public function vehicle()
+    {
+        return $this->belongsTo('App\Vehicle');
+    }
 }

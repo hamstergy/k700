@@ -113,144 +113,50 @@
   <div class="ui vertical stripe segment" id="featured">
         <div class="ui middle aligned stackable grid container">
           <div class="row">
-            <div class="eight wide column">
-                <div class="ui items">
-                    <div class="item">
-                        <div class="ui small image">
-                        <img src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg">
-                        </div>
-                        <div class="content">
-                        <a class="header">Arrowhead Valley Camp</a>
-                            <div class="meta">
-                                <span class="price">$1200</span>
-                                <span class="stay">1 Month</span>
-                            </div>
-                            <div class="description">
-                                <p>Трансмиссия механика<br>
-                                    Год выпуска: 2010<br>
-                                    Грузоподъемность: 1,5тонны<br>
-                                    Тип топлива: бензин<br>
-                                    Высота подъёма мачты: 4, 0 метра<br>
-                                    Колеса цельнолетые (непротыкаемые)
-                                </p>
-                            </div>
-                        </div>
+
+              <div class="ui link cards centered">
+                  @foreach($vehicles as $type)
+                  <div class="card">
+                    <div class="image">
+                      <img src="/images/spectehnika/{{$type->image}}">
                     </div>
-                    <div class="item">
-                        <div class="ui small image">
-                        <img src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg">
-                        </div>
-                        <div class="content">
-                        <a class="header">Buck's Homebrew Stayaway</a>
-                        <div class="meta">
-                            <span class="price">$1000</span>
-                            <span class="stay">2 Weeks</span>
-                        </div>
-                        <div class="description">
-                            <p>Трансмиссия механика<br>
-                                Год выпуска: 2010<br>
-                                Грузоподъемность: 1,5тонны<br>
-                                Тип топлива: бензин<br>
-                                Высота подъёма мачты: 4, 0 метра<br>
-                                Колеса цельнолетые (непротыкаемые)
-                            </p>
-                        </div>
-                        </div>
+                    <div class="content">
+                      <div class="header">{{ $type->name }}</div>
+                      <div class="meta">
+                      <a>{{$type->type->name}}</a>
+                      </div>
+                      <div class="description" style="
+                          overflow: hidden;
+                          text-overflow: ellipsis;
+                          display: -webkit-box;
+                          -webkit-box-orient: vertical;
+                          -webkit-line-clamp: 3;">
+                        {!!preg_replace("<br>",'/\.',html_entity_decode($type->description))!!}
+                      </div>
                     </div>
-                    <div class="item">
-                        <div class="ui small image">
-                        <img src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg">
-                        </div>
-                        <div class="content">
-                        <a class="header">Astrology Camp</a>
-                        <div class="meta">
-                            <span class="price">$1600</span>
-                            <span class="stay">6 Weeks</span>
-                        </div>
-                        <div class="description">
-                            <p>Трансмиссия механика<br>
-                                Год выпуска: 2010<br>
-                                Грузоподъемность: 1,5тонны<br>
-                                Тип топлива: бензин<br>
-                                Высота подъёма мачты: 4, 0 метра<br>
-                                Колеса цельнолетые (непротыкаемые)
-                            </p>
-                        </div>
-                        </div>
+                    <div class="extra content">
+                      <span class="right floated">
+                        {{ $type->year }} год
+                      </span>
+                      <span>
+                        <i class="money bill alternate outline icon"></i>
+                        {{ number_format($type->price,0,'.',' ') }}
+                      </span>
                     </div>
-                </div>
-            </div>
-            <div class="eight wide column">
-                <div class="ui items">
-                    <div class="item">
-                        <div class="ui small image">
-                        <img src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg">
-                        </div>
-                        <div class="content">
-                        <a class="header">Arrowhead Valley Camp</a>
-                        <div class="meta">
-                            <span class="price">$1200</span>
-                            <span class="stay">1 Month</span>
-                        </div>
-                        <div class="description">
-                            <p>Трансмиссия механика<br>
-                                Год выпуска: 2010<br>
-                                Грузоподъемность: 1,5тонны<br>
-                                Тип топлива: бензин<br>
-                                Высота подъёма мачты: 4, 0 метра<br>
-                                Колеса цельнолетые (непротыкаемые)
-                            </p>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="ui small image">
-                        <img src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg">
-                        </div>
-                        <div class="content">
-                        <a class="header">Buck's Homebrew Stayaway</a>
-                        <div class="meta">
-                            <span class="price">$1000</span>
-                            <span class="stay">2 Weeks</span>
-                        </div>
-                        <div class="description">
-                            <p>Трансмиссия механика<br>
-                                Год выпуска: 2010<br>
-                                Грузоподъемность: 1,5тонны<br>
-                                Тип топлива: бензин<br>
-                                Высота подъёма мачты: 4, 0 метра<br>
-                                Колеса цельнолетые (непротыкаемые)
-                            </p>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="ui small image">
-                        <img src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg">
-                        </div>
-                        <div class="content">
-                        <a class="header">Astrology Camp</a>
-                        <div class="meta">
-                            <span class="price">$1600</span>
-                            <span class="stay">6 Weeks</span>
-                        </div>
-                        <div class="description">
-                            <p>Трансмиссия механика<br>
-                                Год выпуска: 2010<br>
-                                Грузоподъемность: 1,5тонны<br>
-                                Тип топлива: бензин<br>
-                                Высота подъёма мачты: 4, 0 метра<br>
-                                Колеса цельнолетые (непротыкаемые)
-                            </p>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                  </div>
+                  @endforeach
+              </div>
+               
+                    
+                    
+               
+                
+             
+                  
           </div>
           <div class="row">
             <div class="center aligned column">
-              <a class="ui huge button">Check Them Out</a>
+              <a class="ui huge button" href="/spectehnika">Посмотреть еще</a>
             </div>
           </div>
         </div>
