@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title', $title.' - ROOMIX')
+@section('title', $title.' - K700  Азия')
 @section('description', $description)
 @section('content')
-    <div class="ui container">
+    <div class="ui container" style="padding: 30px 0;">
         <div class="ui breadcrumb">
             <a class="section" href="/spectehnika">Каталог</a>
             <div class="divider"> / </div>
@@ -12,37 +12,26 @@
             <div class="ten wide column">
                 <h1>Купить {{ Illuminate\Support\Str::lower($type->name)}}</h1>
                 <div class="row">
-
-
-                </div>
-
-                <div class="row my-3">
+                    <div class="ui items">
                     @foreach($vehicles as $type)
-                    <div class="col-md-6">
-                        <div class="card mb-4 shadow-sm">
-                            <div class="text-center" style="background-image:url('/images/spectehnika/{{$type->image}}');
-                            width:100%;
-                            height:250px;
-                            background-repeat:no-repeat;
-                            background-size:cover;
-                                    position: relative;">
-
-                                <div class="bg-light"style="position: absolute;bottom: 0;
-                                            left: 0;
-                                            width: 100%;">
-                                    <h3>{{ $type->name }} ({{ $type->year }} год)</h3>
-                                </div>
+                        <div class="item">
+                            <div class="ui small image">
+                            <img src="/images/spectehnika/{{$type->image}}">
                             </div>
-                            <div class="card-body">
-                                    <p class="card-text" style="height: 107px;overflow: hidden;">{!!html_entity_decode($type->description)!!}</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-
-                                        <strong class="d-inline-block mb-2 text-success">{{ number_format($type->price,0,'.',' ') }} тенге</strong>
-                                    </div>
-                                </div>
+                            <div class="content">
+                            <div class="header">{{ $type->name }} ({{ $type->year }} год)</div>
+                            <div class="meta">
+                                <span class="price">{{ number_format($type->price,0,'.',' ') }} тенге</span>
+                                <span class="stay">{{ $type->year }} год</span>
+                            </div>
+                            <div class="description">
+                                {!!preg_replace("<br>",'/\.',html_entity_decode($type->description))!!}
+                            </div>
                             </div>
                         </div>
+                    
                     @endforeach
+                    </div>
                 </div>
             </div>
             <div class="six wide column">

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@yield('title', 'ROOMIX')</title>
+    <title>@yield('title', 'K700 Азия')</title>
     <meta name="description" content="@yield('description', 'Спецтехника в Казахстане, Кыргызстане, Узбекистане')">
     
     <link rel="stylesheet" type="text/css" href="/dist/semantic.min.css">

@@ -87,7 +87,7 @@
 
     <div class="ui inverted vertical masthead center aligned segment">
 
-        <div class="ui container">
+        <div class="ui container" style="padding: 30px 0;">
         <div class="ui large secondary inverted pointing menu">
             <a class="toc item">
             <i class="sidebar icon"></i>

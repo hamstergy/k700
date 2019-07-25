@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title', $title.' - ROOMIX')
+@section('title', $title.' - K700  Азия')
 @section('description', $description)
 @section('content')
-    <div class="ui container">
+    <div class="ui container" style="padding: 30px 0;">
         <div class="ui breadcrumb">
             <div class="active section">Каталог</div>
         </div>

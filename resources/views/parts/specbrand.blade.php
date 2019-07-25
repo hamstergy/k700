@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title', $title.' - ROOMIX')
+@section('title', $title.' - K700  Азия')
 @section('description', $description)
 @section('content')
-    <div class="ui container">
+    <div class="ui container" style="padding: 30px 0;">
             <h1 class="ui header">{{$parts->name}} на {{ Illuminate\Support\Str::lower($type->name) }}
             <div class="sub header">
         <div class="ui breadcrumb">
@@ -17,9 +17,9 @@
         <div class="ui two column stackable grid container">
             <div class="ten wide column">
 
-                    <div class="ui teal progress" data-percent="75">
-                            <div class="bar" style="transition-duration: 300ms; width: 75%;"></div><div class="label">75% заполнено</div>
-                        </div>
+                <div class="ui teal progress" data-percent="75">
+                    <div class="bar" style="transition-duration: 300ms; width: 75%;"></div><div class="label">75% заполнено</div>
+                </div>
 
                 <h1>{{$parts->name}} на {{ Illuminate\Support\Str::lower($type->name) }}</h1>
                 <p>Выберите марку спецтехники</p>
