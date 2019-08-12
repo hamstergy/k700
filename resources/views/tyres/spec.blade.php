@@ -67,7 +67,7 @@
 
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-12">
-                                    <button v-on:click="submitted=true" :disabled="submitted" type="submit" onclick="yaCounter39775005.reachGoal('SPECORDER'); return true;" class="btn btn-success">Отправить заявку</button>
+                                    <button class="ui primary button" v-on:click="submitted=true" :disabled="submitted" type="submit" onclick="yaCounter39775005.reachGoal('SPECORDER'); return true;" class="btn btn-success">Отправить заявку</button>
                                 </div>
                             </div>
                         </form>

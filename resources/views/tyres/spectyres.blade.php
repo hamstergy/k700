@@ -78,37 +78,37 @@
                             {{Session::get('message')}}
                         </div>
                     @endif
-                    <form class="form-horizontal" method="post" action="{{ action('RequestController@getRequestFormSpec') }}">
+                    <form class="ui form" method="post" action="{{ action('RequestController@getRequestFormSpec') }}">
                         {{ csrf_field() }}
-                        <div class="form-group">
+                        <div class="field">
                             <label for="inputTel3" class="col-sm-3 control-label">Телефон</label>
                             <div class="col-sm-9">
                                 <input type="tel" class="form-control" id="inputTel3" name="telephone" placeholder="+7(777)777-77-77" data-format="+7 (ddd) ddd-dddd" required>
                             </div>
 
                         </div>
-                        <div class="form-group">
+                        <div class="field">
                             <label for="inputName1" class="col-sm-3 control-label">Техника</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" id="inputName1" name="type" placeholder="Вилочный погрузчик" value="{{$type->name}}">
                             </div>
                         </div>
                         
-                        <div class="form-group">
+                        <div class="field">
                             <label for="inputName2" class="col-sm-3 control-label">Размер</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" id="inputName2" name="parts" placeholder="23x8.50-12">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="field">
                                 <label for="inputName3" class="col-sm-3 control-label">Количество</label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" id="inputName3" name="brand" placeholder="6 штук">
                                 </div>
                             </div>
-                        <div class="form-group">
+                        <div class="field">
                             <div class="col-sm-offset-3 col-sm-12">
-                                <button v-on:click="submitted=true" :disabled="submitted" type="submit" onclick="yaCounter39775005.reachGoal('SPECORDER'); return true;" class="btn btn-success">Отправить заявку</button>
+                                <button class="ui primary button" v-on:click="submitted=true" :disabled="submitted" type="submit" onclick="yaCounter39775005.reachGoal('SPECORDER'); return true;" class="btn btn-success">Отправить заявку</button>
                             </div>
                         </div>
                     </form>

@@ -23,9 +23,9 @@
 
                 <h1>{{$parts->name}} на {{ Illuminate\Support\Str::lower($type->name) }}</h1>
                 <p>Выберите марку спецтехники</p>
-
+                <div class="ui grid">
                 @foreach($type->brands as $brand)
-                    <div class="col-xs-6 col-lg-3">
+                    <div class="four wide column">
                         <h4>
                             <a name='{{ $brand->name }}' href='{{ route('parts.specmodel', ['spectype' => $type->additional, 'specsparepart' => $parts->additional, 'specbrand' => $brand->additional])}}'>
                                 {{ $brand->name }}
@@ -33,7 +33,7 @@
                         </h4>
                     </div>
                 @endforeach
-
+                </div>
             </div>
 
             <div class="six wide column col-xs-12">
@@ -46,37 +46,37 @@
                             {{Session::get('message')}}
                         </div>
                     @endif
-                    <form class="form-horizontal" method="post" action="{{ action('RequestController@getRequestFormSpec') }}">
+                    <form class="ui form" method="post" action="{{ action('RequestController@getRequestFormSpec') }}">
                         {{ csrf_field() }}
-                        <div class="form-group">
+                        <div class="field">
                             <label for="inputTel3" class="col-sm-3 control-label">Телефон</label>
-                            <div class="col-sm-9">
+                            <div class="ui input fluid">
                                 <input type="tel" class="form-control" id="inputTel3" name="telephone" placeholder="+7(777)777-77-77" data-format="+7 (ddd) ddd-dddd" required>
                             </div>
 
                         </div>
-                        <div class="form-group">
+                        <div class="field">
                             <label for="inputName1" class="col-sm-3 control-label">Техника</label>
-                            <div class="col-sm-9">
+                            <div class="ui input fluid">
                                 <input type="text" class="form-control" id="inputName1" name="type" placeholder="Вилочный погрузчик" value="{{$type->name}}">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="field">
                             <label for="inputName3" class="col-sm-3 control-label">Марка</label>
-                            <div class="col-sm-9">
+                            <div class="ui input fluid">
                                 <input type="text" class="form-control" id="inputName3" name="brand" placeholder="CAT">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="field">
                             <label for="inputName2" class="col-sm-3 control-label">Запчасть</label>
-                            <div class="col-sm-9">
+                            <div class="ui input fluid">
                                 <input type="text" class="form-control" id="inputName2" name="parts" placeholder="Втулка шатуна" value="{{$parts->name}}">
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="field">
                             <div class="col-sm-offset-3 col-sm-12">
-                                <button v-on:click="submitted=true" :disabled="submitted" type="submit" onclick="yaCounter39775005.reachGoal('SPECORDER'); return true;" class="btn btn-success">Отправить заявку</button>
+                                <button class="ui primary button" v-on:click="submitted=true" :disabled="submitted" type="submit" onclick="yaCounter39775005.reachGoal('SPECORDER'); return true;" class="btn btn-success">Отправить заявку</button>
                             </div>
                         </div>
                     </form>

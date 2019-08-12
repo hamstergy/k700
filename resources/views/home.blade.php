@@ -3,10 +3,12 @@
 @section('content')
 
 <style type="text/css">
-
+    .top-menu {
+      padding: 30px 0;
+    }
     .masthead.segment {
       min-height: 700px;
-      padding: 1em 0em;
+      padding: 0em 0em;
       background: #006fa5 !important;
     }
     .masthead .logo.item img {
@@ -82,12 +84,15 @@
         margin-top: 0.5em;
         font-size: 1.5em;
       }
+      .top-menu {
+        padding: 0px;
+      }
     }
   </style>
 
     <div class="ui inverted vertical masthead center aligned segment">
 
-        <div class="ui container" style="padding: 30px 0;">
+        <div class="ui container top-menu">
         <div class="ui large secondary inverted pointing menu">
             <a class="toc item">
             <i class="sidebar icon"></i>

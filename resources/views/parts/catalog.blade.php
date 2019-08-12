@@ -60,22 +60,22 @@
                                 {{Session::get('message')}}
                             </div>
                         @endif
-                        <form class="form-horizontal" method="post" action="{{ action('RequestController@getRequestForm') }}">
+                        <form class="ui-form" method="post" action="{{ action('RequestController@getRequestForm') }}">
                             {{ csrf_field() }}
-                            <div class="form-group">
+                            <div class="field">
                                 <label for="inputTel3" class="col-sm-3 control-label">Телефон</label>
                                 <div class="col-sm-9">
                                     <input type="tel" class="form-control" id="inputTel3" name="telephone" placeholder="+7(777)777-77-77" data-format="+7 (ddd) ddd-dddd" required>
                                 </div>
 
                             </div>
-                            <div class="form-group">
+                            <div class="field">
                                 <label for="inputName2" class="col-sm-3 control-label">Запчасть</label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" id="inputName2" name="parts" placeholder="Амортизатор">
                                 </div>
                             </div>
-                            <div class="form-group" id="vin">
+                            <div class="field" id="vin">
                                 <label for="inputVin3" class="col-sm-3 control-label">VIN-код</label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" id="inputVin3" name="vin" placeholder="SZ45345345FD34">
@@ -84,9 +84,9 @@
                                 <div v-show="show"><img src="/public/images/vincode.png"></div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="field">
                                 <div class="col-sm-offset-3 col-sm-12">
-                                    <button v-on:click="submitted=true" :disabled="submitted" type="submit" onclick="yaCounter39775005.reachGoal('ORDER'); return true;" class="btn btn-success">Отправить заявку</button>
+                                    <button v-on:click="submitted=true" class="ui primary button" :disabled="submitted" type="submit" onclick="yaCounter39775005.reachGoal('ORDER'); return true;" class="btn btn-success">Отправить заявку</button>
                                 </div>
                             </div>
                         </form>
