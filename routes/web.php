@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('home');
 });
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
 
 Route::get('/', ['uses' => 'HomeController@index', 'as' => 'home']);
 Route::get('specservice/', ['uses' => 'SpecServiceController@index', 'as' => 'specservice']);
