@@ -151,13 +151,6 @@
                   </div>
                   @endforeach
               </div>
-               
-                    
-                    
-               
-                
-             
-                  
           </div>
           <div class="row">
             <div class="center aligned column">

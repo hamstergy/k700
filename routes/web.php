@@ -36,7 +36,7 @@ Route::get('tyres/{spectype}/', ['uses' => 'TyreController@getSpectyres', 'as' =
 Route::post('tyres/{spectype}/', ['uses' => 'TyreController@getSpectyres', 'as' => 'tyres.tyres']);
 
 Route::post('request','RequestController@getRequestForm');
-Route::post('requestspec','RequestController@getRequestFormSpec');
+Route::post('requestspec','RequestController@getRequestFormParts');
 Route::post('requestspectyres','RequestController@getRequestFormSpecTyres');
 Route::post('requestspecservice','RequestController@getRequestFormSpecService');
 Route::get('request', 'RequestController@getRequestForm');

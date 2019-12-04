@@ -203,5 +203,11 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/55074046" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+    <!-- RedConnect -->
+    <script id="rhlpscrtg" type="text/javascript" charset="utf-8" async="async"
+    src="https://web.redhelper.ru/service/main.js?c=k7001"></script>
+    <div style="display: none"><a class="rc-copyright" 
+    href="http://redconnect.ru">Сервис обратного звонка RedConnect</a></div>
+    <!--/RedConnect -->
 </body>
 </html>

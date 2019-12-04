@@ -44,7 +44,7 @@
                             {{Session::get('message')}}
                         </div>
                     @endif
-                    <form class="ui form" method="post" action="{{ action('RequestController@getRequestFormSpec') }}">
+                    <form class="ui form" method="post" action="{{ action('RequestController@getRequestFormParts') }}">
                         {{ csrf_field() }}
                         <div class="field">
                             <label for="inputTel3" class="col-sm-3 control-label">Телефон</label>
