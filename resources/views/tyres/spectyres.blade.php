@@ -3,20 +3,25 @@
 @section('description', $description)
 @section('content')
     <div class="ui container" style="padding: 30px 0;">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item active"><a href="/spectyres">Каталог</a></li>
-            <li class="breadcrumb-item active">Шины на {{ Illuminate\Support\Str::lower($type->name) }}</li>
-        </ol>
+        <h1 class="ui header">
+            @if($type->id == '3')
+                Шины на автовышку
+            @else
+                Шины на {{ Illuminate\Support\Str::lower($type->name) }}
+            @endif
+            <div class="sub header">
+            <div class="ui breadcrumb">
+                <a class="section" href="/tyres">Шины</a>
+                <div class="divider"> / </div>
+                {{$type->name}}
+            </div>
+            </div>
+        </h1>
         <div class="ui two column stackable grid container">
             <div id="aper" class="ten wide column">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%"><span class="sr-only">50% Complete (success)</span></div>
+                <div class="ui teal progress" data-percent="75">
+                    <div class="bar" style="transition-duration: 300ms; width: 50%;"></div><div class="label">50% заполнено</div>
                 </div>
-                @if($type->id == '3')
-                    <h1>Каталог шин на автовышку</h1>
-                @else
-                    <h1>Каталог шин на {{ Illuminate\Support\Str::lower($type->name) }}</h1>
-                @endif
 
                 {{--<div :json="setJson2({{ $uniquesizes }})"></div>--}}
                 {{--<div :json="setJson3({{ $uniquewidths }})"></div>--}}
@@ -41,30 +46,32 @@
                 <div class="row fix">
                     <div class="col-xs-12 col-lg-12 table-responsive" style="line-height: 1.4;">
                         <table class="table table-striped" style="font-size:13px;">  
-                                <thead>
-                                  <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Название</th>
-                                    <th scope="col">Размер</th>
-                                    <th scope="col">Ширина</th>
-                                    <th scope="col">Тип</th>
-                                    <th scope="col">Цена, тг.</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach($tyres as $tyre)
-                                        <tr>
-                                        <th scope="row">{{ $tyre->id }}</th>
-                                        <td>{{ $tyre->name }}</td>
-                                        <td>{{ $tyre->size }}</td>
-                                        <td>{{ $tyre->width }}</td>
-                                        <td>{{ $tyre->description }}</td>
-                                        <td>{{ number_format($tyre->price,0) }}</td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                              </table>
-                              
+                            <thead>
+                                <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Название</th>
+                                <th scope="col">Размер</th>
+                                <th scope="col">Ширина</th>
+                                <th scope="col">Тип</th>
+                                <th scope="col">Цена, тг.</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($tyres as $tyre)
+                                    <tr>
+                                    <th scope="row">{{ $tyre->id }}</th>
+                                    <td>{{ $tyre->name }}</td>
+                                    <td>{{ $tyre->size }}</td>
+                                    <td>{{ $tyre->width }}</td>
+                                    <td>{{ $tyre->description }}</td>
+                                    <td>{{ number_format($tyre->price,0) }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        <div style="padding: 30px 0;">
+                            {!! $type->description !!}
+                        </div>
                     </div>
                 </div>
             </div>

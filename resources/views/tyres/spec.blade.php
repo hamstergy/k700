@@ -3,16 +3,18 @@
 @section('description', $description)
 @section('content')
     <div class="ui container" style="padding: 30px 0;">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item active">Каталог</li>
-        </ol>
+        <h1 class="ui header">Каталог шин на спецтехнику
+            <div class="sub header">
+            <div class="ui breadcrumb">Шины
+            </div>
+            </div>
+        </h1>
         <div class="ui two column stackable grid container">
             <div class="ten wide column">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%"><span class="sr-only">25% Complete (success)</span></div>
+                <div class="ui teal progress" data-percent="75">
+                    <div class="bar" style="transition-duration: 300ms; width: 25%;"></div><div class="label">25% заполнено</div>
                 </div>
-            <h1>Каталог шин на спецтехнику</h1>
-            <p>Выберите раздел</p>
+                <p>Выберите раздел</p>
                 <div class="row">
 
                 @foreach($spectypes as $type)

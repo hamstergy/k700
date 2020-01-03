@@ -3,15 +3,15 @@
 @section('description', $description)
 @section('content')
     <div class="ui container" style="padding: 30px 0;">
-            <h1 class="ui header">{{$parts->name}} на {{ Illuminate\Support\Str::lower($type->name) }}
+        <h1 class="ui header">{{$parts->name}} на {{ Illuminate\Support\Str::lower($type->name) }}
             <div class="sub header">
-        <div class="ui breadcrumb">
-            <a class="section" href="/parts">Каталог</a>
-            <div class="divider"> / </div>
-            <a class="section" href="/parts/{{$type->additional}}">{{$type->name}}</a>
-            <div class="divider"> / </div>
-            <div class="active section">{{$parts->name}}</div>
-        </div>
+            <div class="ui breadcrumb">
+                <a class="section" href="/parts">Каталог</a>
+                <div class="divider"> / </div>
+                <a class="section" href="/parts/{{$type->additional}}">{{$type->name}}</a>
+                <div class="divider"> / </div>
+                <div class="active section">{{$parts->name}}</div>
+            </div>
             </div>
         </h1>
         <div class="ui two column stackable grid container">
