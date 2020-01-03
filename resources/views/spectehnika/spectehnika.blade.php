@@ -3,27 +3,30 @@
 @section('description', $description)
 @section('content')
     <div class="ui container" style="padding: 30px 0;">
-        <div class="ui breadcrumb">
-            <div class="active section">Каталог</div>
-        </div>
+        <h1 class="ui header">Каталог спецтехники в Казахстане
+            <div class="sub header">
+                <div class="ui breadcrumb">Каталог
+                </div>
+            </div>
+        </h1>
         <div class="ui two column stackable grid container">
             <div class="ten wide column">
-                <div class="progress">
+                {{-- <div class="progress">
                     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%"><span class="sr-only">25% Complete (success)</span></div>
-                </div>
-                <h1>Каталог спецтехники в Казахстане</h1>
+                </div> --}}
                 <p>Выберите раздел</p>
                 <div class="row">
-
+                    <div class="ui grid">
                     @foreach($spectypes as $type)
 
-                        <div class="col-xs-12 col-lg-6" style="line-height: 1.4;">
+                        <div class="eight wide column" style="line-height: 1.4;">
                             <h4>
                                 <a name='{{ $type->name }}' href='{{ route('spectehnika.vehicles', ['specsparepart' => $type->additional])}}'>
                                     {{ $type->name }}</a>
                             </h4>
                         </div>
                     @endforeach
+                    </div>
                 </div>
 
             </div>

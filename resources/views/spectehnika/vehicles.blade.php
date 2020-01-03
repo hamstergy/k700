@@ -3,34 +3,45 @@
 @section('description', $description)
 @section('content')
     <div class="ui container" style="padding: 30px 0;">
-        <div class="ui breadcrumb">
-            <a class="section" href="/spectehnika">Каталог</a>
-            <div class="divider"> / </div>
-            <div class="active section">{{$type->name}}</div>
-        </div>
+        <h1 class="ui header">
+            @if($type->id == '3')
+                Купить автовышку
+            @else
+                Купить {{ Illuminate\Support\Str::lower($type->name) }}
+            @endif
+            <div class="sub header">
+            <div class="ui breadcrumb">
+                <a class="section" href="/spectehnika">Каталог</a>
+                <div class="divider"> / </div>
+                {{$type->name}}
+            </div>
+            </div>
+        </h1>
         <div class="ui two column stackable grid container">
             <div class="ten wide column">
-                <h1>Купить {{ Illuminate\Support\Str::lower($type->name)}}</h1>
                 <div class="row">
                     <div class="ui items">
-                    @foreach($vehicles as $type)
+                    @foreach($vehicles as $vehicle)
                         <div class="item">
                             <div class="ui small image">
-                            <img src="/images/spectehnika/{{$type->image}}">
+                            <img src="/images/spectehnika/{{$vehicle->image}}">
                             </div>
                             <div class="content">
-                            <div class="header">{{ $type->name }} ({{ $type->year }} год)</div>
+                            <div class="header">{{ $vehicle->name }} ({{ $vehicle->year }} год)</div>
                             <div class="meta">
-                                <span class="price">{{ number_format($type->price,0,'.',' ') }} тенге</span>
-                                <span class="stay">{{ $type->year }} год</span>
+                                <span class="price">{{ number_format($vehicle->price,0,'.',' ') }} тенге</span>
+                                <span class="stay">{{ $vehicle->year }} год</span>
                             </div>
                             <div class="description">
-                                {!!preg_replace("<br>",'/\.',html_entity_decode($type->description))!!}
+                                {!!preg_replace("<br>",'/\.',html_entity_decode($vehicle->description))!!}
                             </div>
                             </div>
                         </div>
                     
                     @endforeach
+                    </div>
+                    <div style="padding: 30px 0;">
+                        {!! $type->description !!}
                     </div>
                 </div>
             </div>
