@@ -190,7 +190,10 @@
                 // create sidebar and attach to menu open
                 $('.ui.sidebar')
                     .sidebar('attach events', '.toc.item');
-            });
+                $('.ui.accordion')
+                    .accordion();
+                });
+                
         </script>
     <script src="/dist/semantic.min.js"></script>
     <!-- Yandex.Metrika counter -->

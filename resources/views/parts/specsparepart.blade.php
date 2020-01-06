@@ -23,25 +23,29 @@
 
 
                 <p>Выберите запчасть</p>
-                <div class="row fix">
+                <div class="ui accordion">
 
                 @foreach($spareparts as $part)
 
-                    <div class="col-xs-12 col-lg-4" style="line-height: 1.4;">
+                    <div class="title">
                         <h4>
-                            <a name='{{ $part->name }}' href='{{ route('parts.specbrand', ['spectype' => $type->additional, 'specsparepart' => $part->additional])}}'>
+                            <i class="dropdown icon"></i>{{ $part->name }}
+                        </h4>
+                    </div>
+                        <div class="content">
+                            <div class="ui secondary vertical menu">
+                            <a class="item" name='{{ $part->name }}' href='{{ route('parts.specbrand', ['spectype' => $type->additional, 'specsparepart' => $part->additional])}}'>
                                 {{ $part->name }}
                             </a>
-                        </h4>
                         @foreach($subparts as $subpart)
                             @if($subpart->groupid == $part->id)
-                                <a name='{{ $part->name }}' href='{{ route('parts.specbrand', ['spectype' => $type->additional, 'specsparepart' => $subpart->additional])}}'>
+                                
+                                <a class="item" name='{{ $part->name }}' href='{{ route('parts.specbrand', ['spectype' => $type->additional, 'specsparepart' => $subpart->additional])}}'>
                                     {{ $subpart->name }}
                                 </a>
-                                <span style="font-size: 12px;"> | </span>
                             @endif
                         @endforeach
-                    </div>
+                        </div></div>
 
                 @endforeach
                 </div>
