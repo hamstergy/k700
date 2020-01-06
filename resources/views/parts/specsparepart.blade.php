@@ -17,11 +17,6 @@
             </div></h1>
         <div class="ui two column stackable grid container">
             <div class="ten wide column">
-                <div class="ui teal progress" data-percent="50">
-                    <div class="bar" style="transition-duration: 300ms; width: 50%;"></div><div class="label">50% заполнено</div>
-                </div>
-
-
                 <p>Выберите запчасть</p>
                 <div class="ui accordion">
 

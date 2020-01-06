@@ -12,10 +12,6 @@
             </div> 
         <div class="ui two column stackable grid container">
             <div class="ten wide column">
-                    <div class="ui teal progress" data-percent="25">
-                        <div class="bar" style="transition-duration: 300ms; width: 25%;"></div><div class="label">25% заполнено</div>
-                    </div>
-            
             <p>Выберите раздел</p>
 
                     @php

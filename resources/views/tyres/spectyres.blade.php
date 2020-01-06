@@ -19,9 +19,6 @@
         </h1>
         <div class="ui two column stackable grid container">
             <div id="aper" class="ten wide column">
-                <div class="ui teal progress" data-percent="75">
-                    <div class="bar" style="transition-duration: 300ms; width: 50%;"></div><div class="label">50% заполнено</div>
-                </div>
 
                 {{--<div :json="setJson2({{ $uniquesizes }})"></div>--}}
                 {{--<div :json="setJson3({{ $uniquewidths }})"></div>--}}

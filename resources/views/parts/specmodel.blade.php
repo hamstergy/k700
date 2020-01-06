@@ -19,9 +19,6 @@
 
         <div class="ui two column stackable grid container">
             <div class="ten wide column col-md-offset-2">
-                <div class="ui teal progress" data-percent="100">
-                    <div class="bar" style="transition-duration: 300ms; width: 100%;"></div><div class="label">100% заполнено</div>
-                </div>
                 <h1>{{$part->name}} на {{ Illuminate\Support\Str::lower($type->name) }} {{$brand->name}}</h1>
 
                     <p>{{$part->name}} @if($brand->description != ''){{$brand->description}} @else на {{ Illuminate\Support\Str::lower($type->name) }} {{$brand->name}} @endif в наличии и под заказ. Доставка от 3 дней по всему Казахстану. Мы предлагаем большой выбор запчастей на японские и китайские вилочные погрузчики. Вы можете заказать {{ Illuminate\Support\Str::lower($part->name) }} оправив заявку, менеджер перезвонит и уточнит детали.</p>
