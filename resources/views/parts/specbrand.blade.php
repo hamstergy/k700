@@ -23,9 +23,9 @@
 
                 <h1>{{$parts->name}} на {{ Illuminate\Support\Str::lower($type->name) }}</h1>
                 <p>Выберите марку спецтехники</p>
-                <div class="ui grid">
+                <div class="ui stackable grid">
                 @foreach($type->brands as $brand)
-                    <div class="four wide column">
+                    <div class="doubling four wide column">
                         <h4>
                             <a name='{{ $brand->name }}' href='{{ route('parts.specmodel', ['spectype' => $type->additional, 'specsparepart' => $parts->additional, 'specbrand' => $brand->additional])}}'>
                                 {{ $brand->name }}
@@ -85,10 +85,19 @@
         </div>
         <hr>
         <h4>Сопутствующие разделы</h4>
+        <div class="ui stackable grid">
         @foreach($subparts as $subpart)
-            <div class="col-xs-6 col-lg-3">
+            {{-- <div class="col-xs-6 col-lg-3">
                 <h5><a name='{{ $subpart->name }}' href='{{ route('parts.specbrand', ['spectype' => $type->additional, 'specsparepart' => $subpart->additional])}}'>{{ $subpart->name }}</a></h5>
-            </div>
+            </div> --}}
+            {{-- <div class="ui grid"> --}}
+                {{-- @foreach($type->brands as $brand) --}}
+                    <div class="four wide column">
+                        <p><a name='{{ $subpart->name }}' href='{{ route('parts.specbrand', ['spectype' => $type->additional, 'specsparepart' => $subpart->additional])}}'>{{ $subpart->name }}</a></p>
+                    </div>
+                {{-- @endforeach --}}
+                {{-- </div> --}}
         @endforeach
+        </div>
     </div>
 @endsection
