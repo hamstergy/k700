@@ -2,8 +2,8 @@
 @section('title', $title.' - K700  Азия')
 @section('description', $description)
 @section('content')
-    <div class="ui container"  style="padding: 30px 0;">
-        <h1 class="ui header">{{$part->name}} на {{ Illuminate\Support\Str::lower($type->name) }} {{$brand->name}}
+    <div class="ui container" style="padding: 30px 0;">
+        <h1 class="ui header">
         <div class="sub header">
             <div class="ui breadcrumb">
                 <a class="section" href="/parts">Каталог</a>

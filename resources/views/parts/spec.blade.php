@@ -2,17 +2,17 @@
 @section('title', $title.' - K700  Азия')
 @section('description', $description)
 @section('content')
-    <div class="ui container"  style="padding: 30px 0;">
-        <h1 class="ui header">Каталог запчастей на спецтехнику
+    <div class="ui container" style="padding: 30px 0;">
+        <div class="ui header">
             <div class="sub header">
                 <div class="ui breadcrumb">
                     <div class="active section">Каталог</div>
                 </div>
             </div>
-        </h1>
+        </div>
         <div class="ui two column stackable grid container">
             <div class="ten wide column">
-            
+            <h1>Каталог запчастей на спецтехнику</h1>
             <p>Выберите раздел</p>
                 <div class="row">
                 <div class="ui grid">

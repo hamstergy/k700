@@ -42,10 +42,9 @@
             {{--</div>--}}
                 <div class="row fix">
                     <div class="col-xs-12 col-lg-12 table-responsive" style="line-height: 1.4;">
-                        <table class="table table-striped" style="font-size:13px;">  
+                        <table class="ui very basic collapsing celled table" style="font-size:13px;">  
                             <thead>
                                 <tr>
-                                <th scope="col">#</th>
                                 <th scope="col">Название</th>
                                 <th scope="col">Размер</th>
                                 <th scope="col">Ширина</th>
@@ -56,12 +55,11 @@
                             <tbody>
                                 @foreach($tyres as $tyre)
                                     <tr>
-                                    <th scope="row">{{ $tyre->id }}</th>
-                                    <td>{{ $tyre->name }}</td>
-                                    <td>{{ $tyre->size }}</td>
-                                    <td>{{ $tyre->width }}</td>
-                                    <td>{{ $tyre->description }}</td>
-                                    <td>{{ number_format($tyre->price,0) }}</td>
+                                    <td scope="row">{{ $tyre->name }}</td>
+                                    <td data-th="Размер: ">{{ $tyre->size }}</td>
+                                    <td data-th="Ширина: ">{{ $tyre->width }}</td>
+                                    <td data-th="Тип: ">{{ $tyre->description }}</td>
+                                    <td data-th="Цена, тг.: ">{{ number_format($tyre->price,0) }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -120,4 +118,21 @@
             </div>
         </div>
     </div>
+    <style>
+    @media only screen and (max-width: 40em) {
+    thead th:not(:first-child) {
+        display: none;
+    }
+    thead {
+        display: none !important;
+    }
+    td, th {
+        display: block;
+    }
+
+    td[data-th]:before  {
+        content: attr(data-th);
+    }
+}
+</style>
 @endsection

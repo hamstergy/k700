@@ -12,7 +12,7 @@
         <div class="ui two column stackable grid container">
             <div class="ten wide column">
                 <p>Выберите раздел</p>
-                <div class="ui grid">
+                <div class="ui stackable grid">
 
                 @foreach($spectypes as $type)
                         <div class="four wide column">

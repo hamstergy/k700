@@ -3,7 +3,7 @@
 @section('description', $description)
 @section('content')
     <div class="ui container" style="padding: 30px 0;">
-        <h1 class="ui header">{{$parts->name}} на {{ Illuminate\Support\Str::lower($type->name) }}
+        <div class="ui header">
             <div class="sub header">
             <div class="ui breadcrumb">
                 <a class="section" href="/parts">Каталог</a>
@@ -13,7 +13,7 @@
                 <div class="active section">{{$parts->name}}</div>
             </div>
             </div>
-        </h1>
+        </div>
         <div class="ui two column stackable grid container">
             <div class="ten wide column">
                 <h1>{{$parts->name}} на {{ Illuminate\Support\Str::lower($type->name) }}</h1>

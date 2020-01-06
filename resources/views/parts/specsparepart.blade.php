@@ -3,22 +3,23 @@
 @section('description', $description)
 @section('content')
     <div class="ui container" style="padding: 30px 0;">
-            @if($type->id == '3')
-                <h1>Каталог запчастей на автовышку
-            @else
-                <h1 class="ui header">Каталог запчастей на {{ Illuminate\Support\Str::lower($type->name) }}
-            @endif
+        <div class="ui header">
             <div class="sub header">
         <div class="ui breadcrumb">
             <a class="section" href="/parts">Каталог</a>
             <div class="divider"> / </div>
             <div class="active section">{{$type->name}}</div>
         </div>
-            </div></h1>
+            </div></div>
         <div class="ui two column stackable grid container">
             <div class="ten wide column">
+                @if($type->id == '3')
+                    <h1>Каталог запчастей на автовышку</h1>
+                @else
+                    <h1 class="ui header">Каталог запчастей на {{ Illuminate\Support\Str::lower($type->name) }}</h1>
+                @endif
                 <p>Выберите запчасть</p>
-                <div class="ui accordion">
+                <div class="ui accordion" style="padding-bottom: 30px;">
 
                 @foreach($spareparts as $part)
 
@@ -44,7 +45,7 @@
 
                 @endforeach
                 </div>
-            </div>
+            </h1>
             <div class="six wide column">
                 <div class="modal-header">
                     <h4 class="modal-title">Оставьте заявку и узнайте наличие и цену на запчасть</h4>
