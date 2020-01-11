@@ -28,24 +28,24 @@
                             <i class="dropdown icon"></i>{{ $part->name }}
                         </h4>
                     </div>
-                        <div class="content">
-                            <div class="ui secondary vertical menu">
-                            <a class="item" name='{{ $part->name }}' href='{{ route('parts.specbrand', ['spectype' => $type->additional, 'specsparepart' => $part->additional])}}'>
-                                {{ $part->name }}
+                    <div class="content">
+                        <div class="ui secondary vertical menu">
+                        <a class="item" name='{{ $part->name }}' href='{{ route('parts.specbrand', ['spectype' => $type->additional, 'specsparepart' => $part->additional])}}'>
+                            {{ $part->name }}
+                        </a>
+                    @foreach($subparts as $subpart)
+                        @if($subpart->groupid == $part->id)
+                            
+                            <a class="item" name='{{ $part->name }}' href='{{ route('parts.specbrand', ['spectype' => $type->additional, 'specsparepart' => $subpart->additional])}}'>
+                                {{ $subpart->name }}
                             </a>
-                        @foreach($subparts as $subpart)
-                            @if($subpart->groupid == $part->id)
-                                
-                                <a class="item" name='{{ $part->name }}' href='{{ route('parts.specbrand', ['spectype' => $type->additional, 'specsparepart' => $subpart->additional])}}'>
-                                    {{ $subpart->name }}
-                                </a>
-                            @endif
-                        @endforeach
-                        </div></div>
-
+                        @endif
+                    @endforeach
+                        </div>
+                    </div>
                 @endforeach
                 </div>
-            </h1>
+            </div>
             <div class="six wide column">
                 <div class="modal-header">
                     <h4 class="modal-title">Оставьте заявку и узнайте наличие и цену на запчасть</h4>
