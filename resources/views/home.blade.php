@@ -29,7 +29,7 @@
     }
 
     .ui.vertical.stripe {
-      padding: 8em 0em;
+      padding: 3em 0em;
     }
     .ui.vertical.stripe h3 {
       font-size: 2em;
@@ -43,7 +43,7 @@
     }
 
     .ui.vertical.stripe .horizontal.divider {
-      margin: 3em 0em;
+      margin: 2em 0em;
     }
 
     .quote.stripe.segment {
@@ -159,19 +159,14 @@
           </div>
         </div>
     </div>
-
-
     <div class="ui vertical stripe segment">
         <div class="ui text container">
-          <h3 class="ui header">Breaking The Grid, Grabs Your Attention</h3>
-          <p>Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your attention.</p>
-          <a class="ui large button">Read More</a>
-          <h4 class="ui horizontal header divider">
-            <a href="#">Case Studies</a>
-          </h4>
-          <h3 class="ui header">Did We Tell You About Our Bananas?</h3>
-          <p>Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but its really true. It took years of gene splicing and combinatory DNA research, but our bananas can really dance.</p>
-          <a class="ui large button">I'm Still Quite Interested</a>
+          @foreach($posts as $post)
+          <h4 class="ui horizontal header divider">{{$post->category}}</h4>
+          <a href="/posts/{{$post->id}}"><h3 class="ui header">{{$post->name}}</h3></a>
+          <p>{{$post->meta_desc}}</p>
+        <a href="/posts/{{$post->id}}" class="ui large button">Читать статью</a>
+          @endforeach
         </div>
     </div>
 @endsection

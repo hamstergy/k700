@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -14,8 +15,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -46,7 +48,13 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        $post = $post;
+        $data = [
+            'title' => $post->name,
+            'post' => $post,
+            'description' => $post->meta_desc
+        ];
+        return view('posts.post', $data);
     }
 
     /**

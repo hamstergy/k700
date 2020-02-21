@@ -19,6 +19,7 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('/', ['uses' => 'HomeController@index', 'as' => 'home']);
+Route::get('posts/{post}', ['uses' => 'PostController@show', 'as' => 'posts.post']);
 Route::get('specservice/', ['uses' => 'SpecServiceController@index', 'as' => 'specservice']);
 Route::get('parts/', ['uses' => 'SparepartController@index', 'as' => 'parts']);
 Route::get('parts/{spectype}/', ['uses' => 'SparepartController@getSpareparts', 'as' => 'parts.specsparepart']);
