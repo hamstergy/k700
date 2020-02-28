@@ -148,13 +148,23 @@
                 <a href="#" class="item">Favorite X-Men</a>
                 </div>
             </div> --}}
-            <div class="six wide column">
+            <div class="four wide column">
                 <h4 class="ui inverted header">Контакты</h4>
                 <div class="ui inverted vertical menu">
                     <a class="item" href="tel:87272901335">+7 (727) 290-1335</a>
                     <a class="item" href="tel:87057784727">+7 (705) 778-4727</a>
                 </div>
-                
+            </div>
+            <div class="six wide column">
+                <h4 class="ui inverted header">Адрес</h4>
+                <div class="ui inverted">
+                    <p>
+                        ИП "PARTS GROUP"<br>
+                        Республика Казахстан, г. Алматы<br>
+                        Илийский тракт, 37A
+                    </p>
+                    
+                </div>
             </div>
             </div>
         </div>
