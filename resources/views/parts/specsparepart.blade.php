@@ -30,13 +30,13 @@
                     </div>
                     <div class="content">
                         <div class="ui secondary vertical menu">
-                        <a class="item" name='{{ $part->name }}' href='{{ route('parts.specbrand', ['spectype' => $type->additional, 'specsparepart' => $part->additional])}}'>
+                        <a class="item" name='{{ $part->name }}' href='{{ route('parts.specbrand', [$type->additional, $part->additional])}}'>
                             {{ $part->name }}
                         </a>
                     @foreach($subparts as $subpart)
                         @if($subpart->groupid == $part->id)
                             
-                            <a class="item" name='{{ $part->name }}' href='{{ route('parts.specbrand', ['spectype' => $type->additional, 'specsparepart' => $subpart->additional])}}'>
+                            <a class="item" name='{{ $part->name }}' href='{{ route('parts.specbrand', [$type->additional, $subpart->additional])}}'>
                                 {{ $subpart->name }}
                             </a>
                         @endif

@@ -20,7 +20,7 @@
 
                         <div class="eight wide column" style="line-height: 1.4;">
                             <h4>
-                                <a name='{{ $type->name }}' href='{{ route('parts.specsparepart', ['specsparepart' => $type->additional])}}'>
+                                <a name='{{ $type->name }}' href='{{ route('parts.specsparepart', [$type->additional])}}'>
                                     {{ $type->name }}</a>
                             </h4>
                         </div>

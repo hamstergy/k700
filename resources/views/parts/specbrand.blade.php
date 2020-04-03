@@ -22,7 +22,7 @@
                 @foreach($type->brands as $brand)
                     <div class="doubling four wide column">
                         <h4>
-                            <a name='{{ $brand->name }}' href='{{ route('parts.specmodel', ['spectype' => $type->additional, 'specsparepart' => $parts->additional, 'specbrand' => $brand->additional])}}'>
+                            <a name='{{ $brand->name }}' href='{{ route('parts.specmodel', [$type->additional, $parts->additional, $brand->additional])}}'>
                                 {{ $brand->name }}
                             </a>
                         </h4>
@@ -88,7 +88,7 @@
             {{-- <div class="ui grid"> --}}
                 {{-- @foreach($type->brands as $brand) --}}
                     <div class="four wide column">
-                        <p><a name='{{ $subpart->name }}' href='{{ route('parts.specbrand', ['spectype' => $type->additional, 'specsparepart' => $subpart->additional])}}'>{{ $subpart->name }}</a></p>
+                        <p><a name='{{ $subpart->name }}' href='{{ route('parts.specbrand', [$type->additional, $subpart->additional])}}'>{{ $subpart->name }}</a></p>
                     </div>
                 {{-- @endforeach --}}
                 {{-- </div> --}}

@@ -24,10 +24,10 @@
                     @foreach($vehicles as $vehicle)
                         <div class="item">
                             <div class="ui small image">
-                            <a href='{{ route('spectehnika.vehicle', ['vehicle' => $vehicle->id])}}'><img src="/images/spectehnika/{{$vehicle->image}}"></a>
+                            <a href='{{ route('spectehnika.vehicle', [$vehicle->id])}}'><img data-src="/images/spectehnika/{{$vehicle->image}}" src="/images/default.png"></a>
                             </div>
                             <div class="content">
-                            <div class="header">{{ $vehicle->name }} ({{ $vehicle->year }} год)</div>
+                                <div class="header"> <a href='{{ route('spectehnika.vehicle', [$vehicle->id])}}'>{{ $vehicle->name }} ({{ $vehicle->year }} год)</a></div>
                             <div class="meta">
                                 <span class="price">{{ number_format($vehicle->price,0,'.',' ') }} тенге</span>
                                 <span class="stay">{{ $vehicle->year }} год</span>

@@ -27,12 +27,12 @@
                         @endphp
                         <div class="col-xs-12 col-lg-4" style="line-height: 1.4;">
                             <h4>
-                                <a name='{{ $part->name }}' href='{{ route('catalog.carbrand', ['sparepart' => $part->additional])}}'>
+                                <a name='{{ $part->name }}' href='{{ route('catalog.carbrand', [$part->additional])}}'>
                                     {{ $part->name }}</a>
                             </h4>
                             @foreach($subparts as $subpart)
                                 @if($subpart->groupid == $part->id)
-                                    <a href='{{ route('catalog.carbrand', ['sparepart' => $subpart->additional])}}' title="{{ $subpart->name }}">{{ $subpart->name }}</a><span style="font-size: 12px;"> | </span>
+                                    <a href='{{ route('catalog.carbrand', [$subpart->additional])}}' title="{{ $subpart->name }}">{{ $subpart->name }}</a><span style="font-size: 12px;"> | </span>
                                 @endif
                             @endforeach
                         </div>

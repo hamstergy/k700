@@ -126,7 +126,7 @@
                       <a href='{{ route('spectehnika.vehicle', ['vehicle' => $type->id])}}'>
                       <div class="card">
                           <div class="image">
-                              <img class="ui image fluid" src="/images/spectehnika/{{$type->image}}">
+                              <img class="ui image fluid" data-src="/images/spectehnika/{{$type->image}}" src="/images/default.png">
                           </div>
                           <div class="content">
                               <div class="header">{{ $type->name }}</div>
