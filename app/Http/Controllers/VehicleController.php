@@ -66,7 +66,8 @@ class VehicleController extends Controller
      */
     public function show(Vehicle $vehicle)
     {
-        //
+//        $vehicle = Vehicle::where('id',$vehicle)->first();
+        return view('spectehnika.vehicle', compact('vehicle'));
     }
 
     /**

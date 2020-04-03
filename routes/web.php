@@ -27,6 +27,8 @@ Route::post('parts/{spectype}/', ['uses' => 'SparepartController@getSpareparts',
 Route::get('spectehnika/', ['uses' => 'SparepartController@spectehnika', 'as' => 'spectehnika']);
 Route::get('spectehnika/{spectype}/', ['uses' => 'VehicleController@getVehicles', 'as' => 'spectehnika.vehicles']);
 Route::post('spectehnika/{spectype}/', ['uses' => 'VehicleController@getVehicles', 'as' => 'spectehnika.vehicles']);
+Route::get('spectehnika/vehicle/{vehicle}', ['uses' => 'VehicleController@show', 'as' => 'spectehnika.vehicle']);
+Route::post('spectehnika/vehicle/{vehicle}', ['uses' => 'VehicleController@show', 'as' => 'spectehnika.vehicle']);
 Route::get('parts/{spectype}/{specsparepart}', ['uses' => 'SparepartController@getBrands', 'as' => 'parts.specbrand']);
 Route::post('parts/{spectype}/{specsparepart}', ['uses' => 'SparepartController@getBrands', 'as' => 'parts.specbrand']);
 Route::get('parts/{spectype}/{specsparepart}/{specbrand}', ['uses' => 'SparepartController@getSpecmodels', 'as' => 'parts.specmodel']);

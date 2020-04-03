@@ -7,9 +7,11 @@
       padding: 30px 0;
     }
     .masthead.segment {
-      min-height: 700px;
+      min-height: 600px;
       padding: 0em 0em;
       background: #006fa5 !important;
+        background: rgb(0,92,136) !important;
+        background: linear-gradient(90deg, rgba(0,92,136,1) 0%, rgba(41,164,224,1) 50%, rgba(0,92,136,1) 100%) !important;
     }
     .masthead .logo.item img {
       margin-right: 1em;
@@ -18,7 +20,7 @@
       margin-left: 0.5em;
     }
     .masthead h1.ui.header {
-      margin-top: 3em;
+      margin-top: 1em;
       margin-bottom: 0em;
       font-size: 4em;
       font-weight: normal;
@@ -121,34 +123,36 @@
 
               <div class="ui link cards centered">
                   @foreach($vehicles as $type)
-                  <div class="card">
-                    <div class="image">
-                      <img src="/images/spectehnika/{{$type->image}}">
-                    </div>
-                    <div class="content">
-                      <div class="header">{{ $type->name }}</div>
-                      <div class="meta">
-                      <a>{{$type->type->name}}</a>
+                      <a href='{{ route('spectehnika.vehicle', ['vehicle' => $type->id])}}'>
+                      <div class="card">
+                          <div class="image">
+                              <img class="ui image fluid" src="/images/spectehnika/{{$type->image}}">
+                          </div>
+                          <div class="content">
+                              <div class="header">{{ $type->name }}</div>
+                              <div class="meta">
+                                  <a>{{$type->type->name}}</a>
+                              </div>
+                              <div class="description" style="
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                      display: -webkit-box;
+                      -webkit-box-orient: vertical;
+                      -webkit-line-clamp: 3;">
+                                  {!!preg_replace("<br>",'/\.',html_entity_decode($type->description))!!}
+                              </div>
+                          </div>
+                          <div class="extra content">
+                  <span class="right floated">
+                    {{ $type->year }} год
+                  </span>
+                              <span>
+                    <i class="money bill alternate outline icon"></i>
+                    {{ number_format($type->price,0,'.',' ') }}
+                  </span>
+                          </div>
                       </div>
-                      <div class="description" style="
-                          overflow: hidden;
-                          text-overflow: ellipsis;
-                          display: -webkit-box;
-                          -webkit-box-orient: vertical;
-                          -webkit-line-clamp: 3;">
-                        {!!preg_replace("<br>",'/\.',html_entity_decode($type->description))!!}
-                      </div>
-                    </div>
-                    <div class="extra content">
-                      <span class="right floated">
-                        {{ $type->year }} год
-                      </span>
-                      <span>
-                        <i class="money bill alternate outline icon"></i>
-                        {{ number_format($type->price,0,'.',' ') }}
-                      </span>
-                    </div>
-                  </div>
+                      </a>
                   @endforeach
               </div>
           </div>
