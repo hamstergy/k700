@@ -62,7 +62,7 @@
                         <div class="field">
                             <label for="inputName1" class="col-sm-3 control-label">Техника</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="inputName1" name="type" placeholder="Вилочный погрузчик">
+                                <input type="text" class="form-control" id="inputName1" name="type" placeholder="Вилочный погрузчик" value="{{$vehicle->type->name.' '.$vehicle->name.' '.$vehicle->year}} года">
                             </div>
                         </div>
                         <div class="field">
