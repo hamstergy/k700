@@ -40,6 +40,9 @@
                     
                     @endforeach
                     </div>
+                        {{ $vehicles->links() }}
+
+
                     <div style="padding: 30px 0;">
                         {!! $type->description !!}
                     </div>

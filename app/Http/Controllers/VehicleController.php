@@ -25,7 +25,8 @@ class VehicleController extends Controller
         $type = Type::where('additional',$spectype)->first();
         $vehicles = Vehicle::orderBy('name', 'ASC')
             ->whereIn('spectype_id',['0', $type->id])
-            ->get();
+            ->paginate(10);
+//            ->get();
         $data = [
             'title' => 'Купить '.Str::lower($type->name).' в Алматы, с доставкой по Казахстану',
             'pagetitle' => 'Книга для гостей',

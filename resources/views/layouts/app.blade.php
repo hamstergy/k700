@@ -55,6 +55,72 @@
         font-size: 1.5em;
       }
     }
+    nav {
+        text-align: center;
+    }
+    .pagination {
+        margin: 0em;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        vertical-align: middle;
+    }
+
+    .pagination .page-item:last-child {
+        border-radius: 0em 0.28571429rem 0.28571429rem 0em;
+    }
+
+    .ui.compact.menu .page-item:last-child {
+        border-radius: 0em 0.28571429rem 0.28571429rem 0em;
+    }
+
+    .pagination .page-item:last-child:before {
+        display: none;
+    }
+
+    .pagination .page-item {
+        position: relative;
+        vertical-align: middle;
+        line-height: 1;
+        text-decoration: none;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background: none;
+        padding: 0.92857143em 1.14285714em;
+        text-transform: none;
+        color: rgba(0, 0, 0, 0.87);
+        font-weight: normal;
+        -webkit-transition: background 0.1s ease, color 0.1s ease, -webkit-box-shadow 0.1s ease;
+        transition: background 0.1s ease, color 0.1s ease, -webkit-box-shadow 0.1s ease;
+        transition: background 0.1s ease, box-shadow 0.1s ease, color 0.1s ease;
+        transition: background 0.1s ease, box-shadow 0.1s ease, color 0.1s ease, -webkit-box-shadow 0.1s ease;
+        list-style-type: none;
+        min-width: 3em;
+        text-align: center;
+    }
+
+    .pagination .icon.page-item i.icon {
+        vertical-align: top;
+    }
+
+
+    /* Active */
+
+    .pagination .active.page-item {
+        border-top: none;
+        /*padding-top: 0.92857143em;*/
+        background-color: rgba(0, 0, 0, 0.05);
+        color: rgba(0, 0, 0, 0.95);
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
     </style>
 </head>
 <body class="pushable">
