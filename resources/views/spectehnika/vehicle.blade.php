@@ -41,7 +41,21 @@
                 </div>
             </div>
             <div class="six wide column">
-                <div class="modal-header">
+
+
+                <div class="ui segment">
+                    <h4 class="modal-title">Контакты</h4>
+                    <p style="line-height: 1.7em;">
+                        ИП "PARTS GROUP"<br>
+                        Республика Казахстан, г. Алматы<br>
+                        Илийский тракт, 37A<br>
+                        <a href="tel:+77781400610">+7 (778) 140 0610</a><br>
+                        <a href="mailto:info@partsgroup.kz">info@partsgroup.kz</a>
+                    </p>
+                </div>
+
+
+                <div class="modal-header" style="padding: 15px 0;">
                     <h4 class="modal-title">Оставьте заявку</h4>
                 </div>
                 <div class="modal-body" id="vin">

@@ -49,6 +49,7 @@
                 </div>
             </div>
             <div class="six wide column">
+
                 <div class="modal-header">
                     <h4 class="modal-title">Оставьте заявку</h4>
                 </div>

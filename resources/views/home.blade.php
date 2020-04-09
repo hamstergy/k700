@@ -91,7 +91,6 @@
       }
     }
   </style>
-
     <div class="ui inverted vertical masthead center aligned segment">
 
         <div class="ui container top-menu">

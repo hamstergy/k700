@@ -223,11 +223,13 @@
             </div>
             <div class="six wide column">
                 <h4 class="ui inverted header">Адрес</h4>
-                <div class="ui inverted">
-                    <p>
+                <div class="ui inverted" >
+                    <p style="line-height: 1.6em;">
                         ИП "PARTS GROUP"<br>
                         Республика Казахстан, г. Алматы<br>
-                        Илийский тракт, 37A
+                        Илийский тракт, 37A<br>
+                        <a href="tel:+77781400610">+7 (778) 140 0610</a><br>
+                        <a href="mailto:info@partsgroup.kz">info@partsgroup.kz</a>
                     </p>
                     
                 </div>
