@@ -1,27 +1,23 @@
 @extends('layouts.app')
-{{--@section('title', $title.' - K700  Азия')--}}
-{{--@section('description', $description)--}}
+@section('title', 'Купить '.$vehicle->type->name.' '.$vehicle->name.' '.$vehicle->year.' года - K700  Азия')
+@section('description', $vehicle->type->name.' '.$vehicle->name.' за '.$vehicle->price.' тенге'.'. Год выпуска: '.$vehicle->year.' год. Тип двигателя: '.$vehicle->engine.'. Продажа в Казахстане.')
 @section('content')
     <div class="ui container" style="padding: 30px 0;">
         <h1 class="ui header">
+            <div class="sub header" style="padding-bottom:5px;">
+                <div class="ui breadcrumb">
+                    <a class="section" href="/spectehnika">Каталог</a>
+                    <div class="divider"> / </div>
+                    <a class="section" href="/spectehnika/{{$vehicle->type->additional}}">{{$vehicle->type->name}}</a>
+                    <div class="divider"> / </div>
+                    {{$vehicle->type->name}} {{$vehicle->brand->name}}
+                </div>
+            </div>
             {{--{{ $type->name }}--}}
             {{$vehicle->type->name.' '.$vehicle->name.' '.$vehicle->year}} года
         </h1>
+        <h2>Цена: {{$vehicle->price}} тенге</h2>
 
-
-        {{--<h1 class="ui header">--}}
-            {{--@if($type->id == '3')--}}
-                {{--Купить автовышку--}}
-            {{--@else--}}
-                {{--Купить {{ Illuminate\Support\Str::lower($type->name) }}--}}
-            {{--@endif--}}
-            {{--<div class="sub header">--}}
-            {{--<div class="ui breadcrumb">--}}
-                {{--<a class="section" href="/spectehnika">Каталог</a>--}}
-                {{--<div class="divider"> / </div>--}}
-                {{--{{$type->name}}--}}
-            {{--</div>--}}
-            {{--</div>--}}
         {{--</h1>--}}
         <div class="ui two column stackable grid container">
             <div class="ten wide column">
@@ -29,11 +25,6 @@
                     <div class="ui items">
                     </div>
                     <div>
-                        <div class="ui tag labels">
-                            <a class="ui label" style="float: right;">
-                                {{$vehicle->price}} тенге
-                            </a>
-                        </div>
                         <img class="ui fluid image" src="/images/spectehnika/{{$vehicle->image}}" alt="">
 
                         <p style="padding: 10px 0;">{!! $vehicle->description !!}</p>
