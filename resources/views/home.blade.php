@@ -7,8 +7,7 @@
       padding: 30px 0;
     }
     .masthead.segment {
-      min-height: 600px;
-      padding: 0em 0em;
+        padding: 0em 0em 3em;
       background: #006fa5 !important;
         background: rgb(0,92,136) !important;
         background: linear-gradient(90deg, rgba(0,92,136,1) 0%, rgba(41,164,224,1) 50%, rgba(0,92,136,1) 100%) !important;
@@ -22,11 +21,11 @@
     .masthead h1.ui.header {
       margin-top: 1em;
       margin-bottom: 0em;
-      font-size: 4em;
+      font-size: 2em;
       font-weight: normal;
     }
     .masthead h2 {
-      font-size: 1.7em;
+      font-size: 1.3em;
       font-weight: normal;
     }
 
@@ -77,6 +76,7 @@
       }
       .masthead.segment {
         min-height: 350px;
+          background: #006fa5 !important;
       }
       .masthead h1.ui.header {
         font-size: 2em;
@@ -91,7 +91,7 @@
       }
     }
   </style>
-    <div class="ui inverted vertical masthead center aligned segment">
+    <div class="ui inverted vertical masthead aligned segment">
 
         <div class="ui container top-menu">
         <div class="ui large secondary inverted pointing menu">
@@ -105,13 +105,37 @@
                 {{-- <a class="item">Сервис</a> --}}
         </div>
         </div>
+        <div class="ui stackable grid container">
+        <div class="three column row">
+            <div class="column">
+                <div class="ui container">
+                    <h1 class="ui inverted header">
+                        СПЕЦТЕХНИКА<br>ИЗ ЯПОНИИ
+                    </h1>
+                    <h2>Контрактная японская спецтехника в наличии</h2>
+                    <a href="{{ route('spectehnika')}}"><div class="ui small inverted basic button">Спецтехника <i class="right arrow icon"></i></div></a>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui container">
+                    <h1 class="ui inverted header">
+                        ЗАПАСНЫЕ ЧАСТИ<br>НА СПЕЦТЕХНИКУ
+                    </h1>
+                    <h2>Запасные части<br>в наличии и под заказ</h2>
+                    <a href="{{ route('parts')}}"><div class="ui small inverted basic button">Запасные части <i class="right arrow icon"></i></div></a>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui container">
+                    <h1 class="ui inverted header">
+                        ШИНЫ<br>НА СПЕЦТЕХНИКУ
+                    </h1>
+                    <h2>Огромный выбор шин<br>в наличии</h2>
+                    <a href="{{ route('tyres')}}"><div class="ui small inverted basic button">Шины <i class="right arrow icon"></i></div></a>
+                </div>
 
-        <div class="ui text container">
-        <h1 class="ui inverted header">
-            СПЕЦТЕХНИКА ИЗ ЯПОНИИ
-        </h1>
-        <h2>Контрактная японская спецтехника в наличии</h2>
-        <a href="#featured"><div class="ui huge primary button">Наша техника <i class="right arrow icon"></i></div></a>
+            </div>
+        </div>
         </div>
 
   </div>

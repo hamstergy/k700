@@ -28,11 +28,10 @@ class VehicleController extends Controller
             ->paginate(10);
 //            ->get();
         $data = [
-            'title' => 'Купить '.Str::lower($type->name).' в Алматы, с доставкой по Казахстану',
-            'pagetitle' => 'Книга для гостей',
+            'title' => 'Купить '.Str::lower($type->name).' в Алматы. Цены на '.Str::lower($type->name).' в Казахстане.',
             'vehicles' => $vehicles,
             'type' => $type,
-            'description' => 'Купить '.Str::lower($type->name).' по выгодным ценам. Широкий ассортимент, оперативный подбор. Доставка по Казахстану, бесплатная доставка по Алматы.'
+            'description' => 'Купить '.Str::lower($type->name).' по выгодным ценам. '.$type->name.' в продаже сейчас. Цены на '.Str::lower($type->name).' в Казахстане.'
         ];
         return view('spectehnika.vehicles', $data);
     }

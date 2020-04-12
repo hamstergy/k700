@@ -16,7 +16,7 @@
             {{--{{ $type->name }}--}}
             {{$vehicle->type->name.' '.$vehicle->name.' '.$vehicle->year}} года
         </h1>
-        <h2>Цена: {{$vehicle->price}} тенге</h2>
+        <h2>Цена: {{ number_format($vehicle->price, 0, ',', ' ')}} тенге</h2>
 
         {{--</h1>--}}
         <div class="ui two column stackable grid container">
@@ -32,7 +32,25 @@
                 </div>
             </div>
             <div class="six wide column">
-
+                <div>
+                    <table class="ui very basic table">
+                        <tr>
+                            <td>Город</td><td>Алматы</td>
+                        </tr>
+                        <tr>
+                            <td>Год</td><td>{{ $vehicle->year }}</td>
+                        </tr>
+                        <tr>
+                            <td>Тип топлива</td><td>{{ $vehicle->engine }}</td>
+                        </tr>
+                        <tr>
+                            <td>Наработка</td><td>{{ $vehicle->hours }} часов</td>
+                        </tr>
+                        <tr>
+                            <td>Производитель</td><td>{{$vehicle->brand->name}}</td>
+                        </tr>
+                    </table>
+                </div>
 
                 <div class="ui segment">
                     <h4 class="modal-title">Контакты</h4>
@@ -45,37 +63,38 @@
                     </p>
                 </div>
 
+                <div class="contact-form">
+                    <div class="modal-header" style="padding: 15px 0;">
+                        <h4 class="modal-title">Оставьте заявку</h4>
+                    </div>
+                    <div class="modal-body" id="vin">
+                        @if(Session::has('message'))
+                            <div class="alert alert-info">
+                                {{Session::get('message')}}
+                            </div>
+                        @endif
+                        <form class="ui form" method="post" action="{{ action('RequestController@getRequestFormParts') }}">
+                            {{ csrf_field() }}
+                            <div class="field">
+                                <label for="inputTel3" class="col-sm-3 control-label">Телефон</label>
+                                <div class="col-sm-9">
+                                    <input type="tel" class="form-control" id="inputTel3" name="telephone" placeholder="+7(777)777-77-77" data-format="+7 (ddd) ddd-dddd" required>
+                                </div>
 
-                <div class="modal-header" style="padding: 15px 0;">
-                    <h4 class="modal-title">Оставьте заявку</h4>
-                </div>
-                <div class="modal-body" id="vin">
-                    @if(Session::has('message'))
-                        <div class="alert alert-info">
-                            {{Session::get('message')}}
-                        </div>
-                    @endif
-                    <form class="ui form" method="post" action="{{ action('RequestController@getRequestFormParts') }}">
-                        {{ csrf_field() }}
-                        <div class="field">
-                            <label for="inputTel3" class="col-sm-3 control-label">Телефон</label>
-                            <div class="col-sm-9">
-                                <input type="tel" class="form-control" id="inputTel3" name="telephone" placeholder="+7(777)777-77-77" data-format="+7 (ddd) ddd-dddd" required>
                             </div>
-
-                        </div>
-                        <div class="field">
-                            <label for="inputName1" class="col-sm-3 control-label">Техника</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="inputName1" name="type" placeholder="Вилочный погрузчик" value="{{$vehicle->type->name.' '.$vehicle->name.' '.$vehicle->year}} года">
+                            <div class="field">
+                                <label for="inputName1" class="col-sm-3 control-label">Техника</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="inputName1" name="type" placeholder="Вилочный погрузчик" value="{{$vehicle->type->name.' '.$vehicle->name.' '.$vehicle->year}} года">
+                                </div>
                             </div>
-                        </div>
-                        <div class="field">
-                            <div class="col-sm-offset-3 col-sm-12">
-                                <button class="ui primary button" v-on:click="submitted=true" :disabled="submitted" type="submit" onclick="yaCounter39775005.reachGoal('SPECORDER'); return true;" class="btn btn-success">Отправить заявку</button>
+                            <div class="field">
+                                <div class="col-sm-offset-3 col-sm-12">
+                                    <button class="ui primary button" v-on:click="submitted=true" :disabled="submitted" type="submit" onclick="yaCounter39775005.reachGoal('SPECORDER'); return true;" class="btn btn-success">Отправить заявку</button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

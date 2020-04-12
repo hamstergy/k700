@@ -18,8 +18,9 @@
 
     <title>@yield('title', 'K700 Азия')</title>
     <meta name="description" content="@yield('description', 'Спецтехника в Казахстане, Кыргызстане, Узбекистане')">
-    
+
     <link rel="stylesheet" type="text/css" href="/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
     <style>
     .ui.secondary.pointing.menu {
         border-bottom: 0px solid rgba(34,36,38,.15) !important;

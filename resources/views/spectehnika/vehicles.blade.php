@@ -5,9 +5,9 @@
     <div class="ui container" style="padding: 30px 0;">
         <h1 class="ui header">
             @if($type->id == '3')
-                Купить автовышку
+                Купить автовышку в Казахстане
             @else
-                Купить {{ Illuminate\Support\Str::lower($type->name) }}
+                Купить {{ Illuminate\Support\Str::lower($type->name) }} в Казахстане
             @endif
             <div class="sub header">
             <div class="ui breadcrumb">
@@ -43,9 +43,9 @@
                         {{ $vehicles->links() }}
 
 
-                    <div style="padding: 30px 0;">
-                        {!! $type->description !!}
-                    </div>
+                    {{--<div style="padding: 30px 0;">--}}
+                        {{--{!! //$type->description !!}--}}
+                    {{--</div>--}}
                 </div>
             </div>
             <div class="six wide column">
