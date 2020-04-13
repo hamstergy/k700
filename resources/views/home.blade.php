@@ -146,15 +146,17 @@
 
               <div class="ui link cards centered">
                   @foreach($vehicles as $type)
-                      <a href='{{ route('spectehnika.vehicle', ['vehicle' => $type->id])}}'>
+
                       <div class="card">
                           <div class="image">
-                              <img class="ui image fluid" data-src="/images/spectehnika/{{$type->image}}" src="/images/default.png">
+                              <a href='{{ route('spectehnika.vehicle', ['vehicle' => $type->id])}}'>
+                                  <img class="ui image fluid" data-src="/images/spectehnika/{{$type->image}}" src="/images/default.png">
+                              </a>
                           </div>
                           <div class="content">
-                              <div class="header">{{ $type->name }}</div>
+                              <div class="header"><a href='{{ route('spectehnika.vehicle', ['vehicle' => $type->id])}}'>{{ $type->name }}</a></div>
                               <div class="meta">
-                                  <a>{{$type->type->name}}</a>
+                                  {{$type->type->name}}
                               </div>
                               <div class="description" style="
                       overflow: hidden;
@@ -175,7 +177,6 @@
                   </span>
                           </div>
                       </div>
-                      </a>
                   @endforeach
               </div>
           </div>
