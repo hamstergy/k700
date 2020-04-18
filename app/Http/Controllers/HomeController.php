@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $vehicles = Vehicle::take(6)
+        $vehicles = Vehicle::inRandomOrder()->limit(6)
             ->orderBy('name', 'ASC')
             ->has('type')
             ->get();
