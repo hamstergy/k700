@@ -15,19 +15,11 @@
         </url>
         @foreach ($type->vehicles as $vehicle)
             <url>
-                <loc>https://k700.asia/spectehnika/{{$type->additional}}/{{ $vehicle->id }}</loc>
+                <loc>https://k700.asia/spectehnika/{{$type->additional}}/vehicle/{{ $vehicle->id }}</loc>
                 <lastmod>2018-10-01T18:23:17+00:00</lastmod>
                 <changefreq>monthly</changefreq>
                 <priority>0.6</priority>
             </url>
-            {{--@foreach ($type->brands as $brand)--}}
-                {{--<url>--}}
-                    {{--<loc>https://k700.asia/parts/{{$type->additional}}/{{ $part->additional }}/{{$brand->additional}}</loc>--}}
-                    {{--<lastmod>2018-10-01T18:23:17+00:00</lastmod>--}}
-                    {{--<changefreq>monthly</changefreq>--}}
-                    {{--<priority>0.5</priority>--}}
-                {{--</url>--}}
-            {{--@endforeach--}}
         @endforeach
     @endforeach
 </urlset>
