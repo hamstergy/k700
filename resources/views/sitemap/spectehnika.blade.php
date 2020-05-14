@@ -15,7 +15,7 @@
         </url>
         @foreach ($type->vehicles as $vehicle)
             <url>
-                <loc>https://k700.asia/spectehnika/{{$type->additional}}/vehicle/{{ $vehicle->id }}</loc>
+                <loc>https://k700.asia/spectehnika/vehicle/{{ $vehicle->id }}</loc>
                 <lastmod>2018-10-01T18:23:17+00:00</lastmod>
                 <changefreq>monthly</changefreq>
                 <priority>0.6</priority>
