@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
-<style type="text/css">
+<style>
     .top-menu {
       padding: 30px 0;
     }
@@ -150,7 +149,7 @@
                       <div class="card">
                           <div class="image">
                               <a href='{{ route('spectehnika.vehicle', ['vehicle' => $type->id])}}'>
-                                  <img class="ui image fluid" data-src="/images/spectehnika/{{$type->image}}" src="/images/default.png">
+                                  <img class="ui image fluid" data-src="/images/spectehnika/{{$type->image}}" src="/images/default.png" alt="{{$type->type->name}} {{ $type->name }} за {{ number_format($type->price,0,'.',' ') }} тенге">
                               </a>
                           </div>
                           <div class="content">

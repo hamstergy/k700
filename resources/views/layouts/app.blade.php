@@ -131,7 +131,7 @@
         <a class="item {{ Request::is('home') ? 'active' : '' }}" href="{{ route('home') }}">Главная</a>
         <a class="item {{ Request::is('spectehnika/*')  || Request::is('spectehnika') ? 'active' : '' }}" href="{{ route('spectehnika') }}">Спецтехника</a>
         <a class="item {{ Request::is('parts/*') || Request::is('parts')  ? 'active' : '' }}" href="{{ route('parts') }}">Запасные части</a>
-        <a class="item {{ Request::is('tyres/*')  || Request::is('tyres')  ? 'active' : '' }}" href="{{ route('tyres') }}">Шины</a>                
+        <a class="item {{ Request::is('tyres/*')  || Request::is('tyres')  ? 'active' : '' }}" href="{{ route('tyres') }}">Шины</a>
 {{-- <a class="item {{ Route::currentRouteName() == 'specservice' ? 'active' : '' }}" href="{{ route('specservice') }}">Сервис</a> --}}
         {{-- <div class="right menu">
           <div class="item">
@@ -149,7 +149,7 @@
         <a class="item {{ Request::is('home') ? 'active' : '' }}" href="{{ route('home') }}">Главная</a>
         <a class="item {{ Request::is('spectehnika/*')  || Request::is('spectehnika') ? 'active' : '' }}" href="{{ route('spectehnika') }}">Спецтехника</a>
         <a class="item {{ Request::is('parts/*') || Request::is('parts')  ? 'active' : '' }}" href="{{ route('parts') }}">Запасные части</a>
-        <a class="item {{ Request::is('tyres/*')  || Request::is('tyres')  ? 'active' : '' }}" href="{{ route('tyres') }}">Шины</a>                
+        <a class="item {{ Request::is('tyres/*')  || Request::is('tyres')  ? 'active' : '' }}" href="{{ route('tyres') }}">Шины</a>
 
         {{-- <a class="item">Сервис</a> --}}
         {{-- <a class="item">Login</a>
@@ -161,16 +161,16 @@
             <div class="ui inverted fullsite vertical center aligned segment">
 
                 <div class="ui container">
-                
+
                 <div class="ui large secondary inverted pointing menu">
                     <a class="toc item">
                     <i class="sidebar icon"></i>
                     </a>
-                    
+
                     <a class="item {{ Request::is('home') ? 'active' : '' }}" href="{{ route('home') }}">Главная</a>
                     <a class="item {{ Request::is('spectehnika/*')  || Request::is('spectehnika') ? 'active' : '' }}" href="{{ route('spectehnika') }}">Спецтехника</a>
                     <a class="item {{ Request::is('parts/*') || Request::is('parts')  ? 'active' : '' }}" href="{{ route('parts') }}">Запасные части</a>
-                    <a class="item {{ Request::is('tyres/*')  || Request::is('tyres')  ? 'active' : '' }}" href="{{ route('tyres') }}">Шины</a>                
+                    <a class="item {{ Request::is('tyres/*')  || Request::is('tyres')  ? 'active' : '' }}" href="{{ route('tyres') }}">Шины</a>
                     <div class="toc item right">K700.ASIA</div>
                     <a class="toc item right" href="tel:87272901335"><i class="phone icon"></i></a>
                 </div>
@@ -202,7 +202,7 @@
                 <a class="item {{ Request::is('home') ? 'active' : '' }}" href="{{ route('home') }}">Главная</a>
                 <a class="item {{ Request::is('spectehnika/*')  || Request::is('spectehnika') ? 'active' : '' }}" href="{{ route('spectehnika') }}">Спецтехника</a>
                 <a class="item {{ Request::is('parts/*') || Request::is('parts')  ? 'active' : '' }}" href="{{ route('parts') }}">Запасные части</a>
-                <a class="item {{ Request::is('tyres/*')  || Request::is('tyres')  ? 'active' : '' }}" href="{{ route('tyres') }}">Шины</a>                
+                <a class="item {{ Request::is('tyres/*')  || Request::is('tyres')  ? 'active' : '' }}" href="{{ route('tyres') }}">Шины</a>
                 {{-- <a class="item">Сервис</a> --}}
                 </div>
             </div>
@@ -232,14 +232,13 @@
                         <a href="tel:+77781400610">+7 (778) 140 0610</a><br>
                         <a href="mailto:info@partsgroup.kz">info@partsgroup.kz</a>
                     </p>
-                    
+
                 </div>
             </div>
             </div>
         </div>
     </div>
 
-</div>
 <script
     src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -292,7 +291,7 @@
             });
     </script>
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
+    <script>
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
         (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
@@ -306,9 +305,9 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/55074046" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
     <!-- RedConnect -->
-    <script id="rhlpscrtg" type="text/javascript" charset="utf-8" async="async"
+    <script id="rhlpscrtg" async="async"
     src="https://web.redhelper.ru/service/main.js?c=k7001"></script>
-    <div style="display: none"><a class="rc-copyright" 
+    <div style="display: none"><a class="rc-copyright"
     href="http://redconnect.ru">Сервис обратного звонка RedConnect</a></div>
     <!--/RedConnect -->
 </body>

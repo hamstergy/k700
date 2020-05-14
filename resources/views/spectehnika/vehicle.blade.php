@@ -25,7 +25,7 @@
                     <div class="ui items">
                     </div>
                     <div>
-                        <img class="ui fluid image" src="/images/spectehnika/{{$vehicle->image}}" alt="">
+                        <img class="ui fluid image" src="/images/spectehnika/{{$vehicle->image}}" alt="{{$vehicle->type->name}} {{ $vehicle->name }} за {{ number_format($vehicle->price,0,'.',' ') }} тенге">
 
                         <p style="padding: 10px 0;">{!! $vehicle->description !!}</p>
                     </div>
