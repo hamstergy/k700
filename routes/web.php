@@ -46,3 +46,8 @@ Route::get('request', 'RequestController@getRequestForm');
 Route::get('requestspec', 'RequestController@getRequestFormSpec');
 Route::get('requestspectyres', 'RequestController@getRequestFormSpecTyres');
 Route::get('requestspecservice', 'RequestController@getRequestFormSpecService');
+Route::get('/sitemap.xml', 'SitemapController@index');
+Route::get('/sitemap/posts.xml', 'SitemapController@posts');
+Route::get('/sitemap/spectehnika.xml', 'SitemapController@spectehnika');
+Route::get('/sitemap/parts.xml', 'SitemapController@parts');
+Route::get('/sitemap/tyres.xml', 'SitemapController@tyres');
