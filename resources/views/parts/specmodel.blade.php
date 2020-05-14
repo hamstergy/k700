@@ -3,7 +3,7 @@
 @section('description', $description)
 @section('content')
     <div class="ui container" style="padding: 30px 0;">
-        <h1 class="ui header">
+        <div class="ui header">
         <div class="sub header">
             <div class="ui breadcrumb">
                 <a class="section" href="/parts">Каталог</a>
@@ -15,7 +15,7 @@
                 <div class="active section">Заказать деталь</div>
             </div>
         </div>
-        </h1>
+        </div>
 
         <div class="ui two column stackable grid container">
             <div class="ten wide column col-md-offset-2">
@@ -68,7 +68,7 @@
                             </div>
                         </form>
                 </div>
-                
+
             </div>
 
 

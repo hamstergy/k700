@@ -3,7 +3,7 @@
 @section('description', $vehicle->type->name.' '.$vehicle->name.' за '.$vehicle->price.' тенге'.'. Год выпуска: '.$vehicle->year.' год. Тип двигателя: '.$vehicle->engine.'. Продажа в Казахстане.')
 @section('content')
     <div class="ui container" style="padding: 30px 0;">
-        <h1 class="ui header">
+        <div class="ui header">
             <div class="sub header" style="padding-bottom:5px;">
                 <div class="ui breadcrumb">
                     <a class="section" href="/spectehnika">Каталог</a>
@@ -14,8 +14,8 @@
                 </div>
             </div>
             {{--{{ $type->name }}--}}
-            {{$vehicle->type->name.' '.$vehicle->name.' '.$vehicle->year}} года
-        </h1>
+            <h1 style="margin-top: 4px;">{{$vehicle->type->name.' '.$vehicle->name.' '.$vehicle->year}} года</h1>
+        </div>
         <h2>Цена: {{ number_format($vehicle->price, 0, ',', ' ')}} тенге</h2>
 
         {{--</h1>--}}

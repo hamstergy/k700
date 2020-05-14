@@ -3,11 +3,11 @@
 @section('description', $description)
 @section('content')
     <div class="ui container" style="padding: 30px 0;">
-        <h1 class="ui header">
+        <div class="ui header">
             @if($type->id == '3')
-                Купить автовышку в Казахстане
+                <h1 style="margin-bottom: 4px;">Купить автовышку в Казахстане</h1>
             @else
-                Купить {{ Illuminate\Support\Str::lower($type->name) }} в Казахстане
+                <h1 style="margin-bottom: 4px;">Купить {{ Illuminate\Support\Str::lower($type->name) }} в Казахстане</h1>
             @endif
             <div class="sub header">
             <div class="ui breadcrumb">
@@ -16,7 +16,7 @@
                 {{$type->name}}
             </div>
             </div>
-        </h1>
+        </div>
         <div class="ui two column stackable grid container">
             <div class="ten wide column">
                 <div class="row">

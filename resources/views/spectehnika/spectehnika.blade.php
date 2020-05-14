@@ -3,12 +3,12 @@
 @section('description', $description)
 @section('content')
     <div class="ui container" style="padding: 30px 0;">
-        <h1 class="ui header">Каталог спецтехники в Казахстане
+        <div class="ui header"><h1 style="margin-bottom: 4px;">Каталог спецтехники в Казахстане</h1>
             <div class="sub header">
                 <div class="ui breadcrumb">Каталог
                 </div>
             </div>
-        </h1>
+        </div>
         <div class="ui two column stackable grid container">
             <div class="ten wide column">
                 {{-- <div class="progress">
