@@ -51,3 +51,5 @@ Route::get('/sitemap/posts.xml', 'SitemapController@posts');
 Route::get('/sitemap/spectehnika.xml', 'SitemapController@spectehnika');
 Route::get('/sitemap/parts.xml', 'SitemapController@parts');
 Route::get('/sitemap/tyres.xml', 'SitemapController@tyres');
+Route::get('/sitemap/tyres.xml', 'SitemapController@tyres');
+Route::get('/turbo/vehicles.xml', 'YandexTurboPages@index');
