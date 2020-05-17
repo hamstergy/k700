@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@section('title', $title.' - K700  Азия')
+@section('description', $description)
 @section('content')
 <div class="ui inverted vertical masthead aligned segment">
 
