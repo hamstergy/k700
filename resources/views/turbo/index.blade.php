@@ -20,6 +20,7 @@
             <offer id="{{$vehicle->id}}">
                 <name>{{$vehicle->type->name}} {{$vehicle->name}}</name>
                 <url>https://k700.asia/spectehnika/vehicle/{{$vehicle->id}}</url>
+                <picture>https://k700.asia/images/spectehnika/{{$vehicle->image}}</picture>
                 <price>{{$vehicle->price}}</price>
                 <currencyId>KZT</currencyId>
                 <categoryId>{{$vehicle->type->id}}</categoryId>
