@@ -302,13 +302,29 @@
             webvisor:true
         });
     </script>
+    <script type='text/javascript'>
+        (function () {
+            window['yandexChatWidgetCallback'] = function() {
+                try {
+                    window.yandexChatWidget = new Ya.ChatWidget({
+                        guid: '3da4c9f7-4f74-43fa-b07b-ec64e341020d',
+                        buttonText: '',
+                        title: 'Чат',
+                        theme: 'light',
+                        collapsedDesktop: 'never',
+                        collapsedTouch: 'never'
+                    });
+                } catch(e) { }
+            };
+            var n = document.getElementsByTagName('script')[0],
+                s = document.createElement('script');
+            s.async = true;
+            s.charset = 'UTF-8';
+            s.src = 'https://yastatic.net/s3/chat/widget.js';
+            n.parentNode.insertBefore(s, n);
+        })();
+    </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/55074046" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
-    <!-- RedConnect -->
-    <script id="rhlpscrtg" async="async"
-    src="https://web.redhelper.ru/service/main.js?c=k7001"></script>
-    <div style="display: none"><a class="rc-copyright"
-    href="http://redconnect.ru">Сервис обратного звонка RedConnect</a></div>
-    <!--/RedConnect -->
 </body>
 </html>
