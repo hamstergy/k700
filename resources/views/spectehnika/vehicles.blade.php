@@ -83,5 +83,6 @@
                 </div>
             </div>
         </div>
+        <div style="padding-top:30px;"> {!! $type->description_vehicles !!}</div>
     </div>
 @endsection
