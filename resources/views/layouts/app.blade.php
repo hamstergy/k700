@@ -302,29 +302,31 @@
             webvisor:true
         });
     </script>
-    <script type='text/javascript'>
-        (function () {
-            window['yandexChatWidgetCallback'] = function() {
-                try {
-                    window.yandexChatWidget = new Ya.ChatWidget({
-                        guid: '3da4c9f7-4f74-43fa-b07b-ec64e341020d',
-                        buttonText: '',
-                        title: 'Чат',
-                        theme: 'light',
-                        collapsedDesktop: 'never',
-                        collapsedTouch: 'never'
-                    });
-                } catch(e) { }
-            };
-            var n = document.getElementsByTagName('script')[0],
-                s = document.createElement('script');
-            s.async = true;
-            s.charset = 'UTF-8';
-            s.src = 'https://yastatic.net/s3/chat/widget.js';
-            n.parentNode.insertBefore(s, n);
-        })();
-    </script>
+    <!-- RedConnect -->
+    <script id="rhlpscrtg" type="text/javascript" charset="utf-8" async="async"
+            src="https://web.redhelper.ru/service/main.js?c=k7001"></script>
+    <div style="display: none"><a class="rc-copyright"
+                                  href="http://redconnect.ru">Сервис обратного звонка RedConnect</a></div>
+    <!--/RedConnect -->
     <noscript><div><img src="https://mc.yandex.ru/watch/55074046" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '274621493681301');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=274621493681301&ev=PageView&noscript=1"
+        /></noscript>
+    <!-- End Facebook Pixel Code -->
 </body>
 </html>
