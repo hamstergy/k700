@@ -16,18 +16,23 @@ class TyreController extends Controller
      */
     public function index()
     {
-        $spectyretypes = Tyretype::orderBy('name', 'ASC')->get();
-        $data = [
-            'title' => 'Купить шины на спецтехнику в Алматы, с доставкой по Казахстану',
-            'pagetitle' => 'Книга для гостей',
-            'spectypes' => $spectyretypes,
-            'description' => 'Шины на спецтехнику и сельхозтехнику по выгодным ценам. Широкий ассортимент, оперативный подбор. Доставка по Казахстану.'
-        ];
-        return view('tyres.spec', $data);
+        try {
+            $spectyretypes = Tyretype::orderBy('name', 'ASC')->get();
+            $data = [
+                'title' => 'Купить шины на спецтехнику в Алматы, с доставкой по Казахстану',
+                'pagetitle' => 'Книга для гостей',
+                'spectypes' => $spectyretypes,
+                'description' => 'Шины на спецтехнику и сельхозтехнику по выгодным ценам. Широкий ассортимент, оперативный подбор. Доставка по Казахстану.'
+            ];
+            return view('tyres.spec', $data);
+        } catch (\Exception $e) {
+            abort(404);
+        }
     }
 
     public function getSpectyres($spectype)
     {
+        try {
         $type = Tyretype::where('additional',$spectype)->first();
         $tyres = Tyre::orderBy('price', 'ASC')->where('disabled','0')
             ->where('price','<>','0')
@@ -53,10 +58,14 @@ class TyreController extends Controller
             'description' => 'Шины на '.Str::lower($type->name).' по выгодным ценам. Широкий ассортимент, оперативный подбор. Доставка по Казахстану, бесплатная доставка по Алматы.'
         ];
         return view('tyres.spectyres', $data);
+        } catch (\Exception $e) {
+            abort(404);
+        }
     }
 
     public function getSpecbrands($spectype,$specsparepart)
     {
+        try {
         $type = Spectype::with('specbrands')
             ->where('additional',$spectype)
             ->orderBy('name', 'ASC')->get()
@@ -80,10 +89,14 @@ class TyreController extends Controller
             'description' => $metadesc
         ];
         return view('spec.specbrand', $data);
+        } catch (\Exception $e) {
+            abort(404);
+        }
     }
 
     public function request($sparepart,$carbrand,$carmodel)
     {
+        try {
         $carmodels = Carmodel::where('additional',$carmodel)->first();
         $parts = Sparepart::where('additional',$sparepart)->first();
         $markal = Carbrand::where('additional',$carbrand)
@@ -102,6 +115,9 @@ class TyreController extends Controller
             'description' => $metadesc
         ];
         return view('catalog.carmodel', $data);
+        } catch (\Exception $e) {
+            abort(404);
+        }
     }
 
     /**

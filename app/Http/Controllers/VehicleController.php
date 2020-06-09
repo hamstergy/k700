@@ -22,6 +22,7 @@ class VehicleController extends Controller
 
     public function getVehicles($spectype)
     {
+        try {
         $type = Type::where('additional',$spectype)->first();
         $vehicles = Vehicle::orderBy('name', 'ASC')
             ->whereIn('spectype_id',['0', $type->id])
@@ -34,6 +35,9 @@ class VehicleController extends Controller
             'description' => 'Купить '.Str::lower($type->name).' по выгодным ценам. '.$type->name.' в продаже сейчас. Цены на '.Str::lower($type->name).' в Казахстане.'
         ];
         return view('spectehnika.vehicles', $data);
+        } catch (\Exception $e) {
+            abort(404);
+        }
     }
 
 

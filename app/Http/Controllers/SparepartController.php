@@ -15,6 +15,7 @@ class SparepartController extends Controller
 {
     public function index()
     {
+        try {
         $spectypes = Type::orderBy('name', 'ASC')->get();
         $data = [
             'title' => 'Купить запчасти на спецтехнику в Алматы, с доставкой по Казахстану',
@@ -23,9 +24,13 @@ class SparepartController extends Controller
             'description' => 'Запчасти на спецтехнику и сельхозтехнику по выгодным ценам. Широкий ассортимент, оперативный подбор. Доставка по Казахстану.'
         ];
         return view('parts.spec', $data);
+        } catch (\Exception $e) {
+            abort(404);
+        }
     }
     public function spectehnika()
     {
+        try {
         $spectypes = Type::orderBy('name', 'ASC')->get();
         $data = [
             'title' => 'Купить спецтехнику в Казахстане, Алматы, Караганда, Астана, Шымкент с доставкой по Казахстану',
@@ -34,74 +39,91 @@ class SparepartController extends Controller
             'description' => 'Спецтехника и сельхозтехника по выгодным ценам. Широкий ассортимент, оперативный подбор. Доставка по Казахстану.'
         ];
         return view('spectehnika.spectehnika', $data);
+        } catch (\Exception $e) {
+            abort(404);
+        }
     }
 
     public function getSpareparts($spectype)
     {
-        $type = Type::where('additional',$spectype)->first();
-        $spareparts = Sparepart::orderBy('name', 'ASC')->where('groupid','0')
-            ->whereIn('typeid',['0', $type->id])
-            ->where('disabled','0')
-            ->get();
-        $subparts = Sparepart::orderBy('name', 'ASC')->where('groupid','<>','0')
-            ->whereIn('typeid',['0', $type->id])
-            ->where('disabled','0')
-            ->get();
-        $data = [
-            'title' => 'Купить запчасти на '.Str::lower($type->name).' в Алматы, с доставкой по Казахстану',
-            'pagetitle' => 'Книга для гостей',
-            'spareparts' => $spareparts,
-            'subparts' => $subparts,
-            'type' => $type,
-            'description' => 'Автозапчасти на '.Str::lower($type->name).' по выгодным ценам. Широкий ассортимент, оперативный подбор. Доставка по Казахстану, бесплатная доставка по Алматы.'
-        ];
-        return view('parts.specsparepart', $data);
+        try {
+            $type = Type::where('additional',$spectype)->first();
+            $spareparts = Sparepart::orderBy('name', 'ASC')->where('groupid','0')
+                ->whereIn('typeid',['0', $type->id])
+                ->where('disabled','0')
+                ->get();
+            $subparts = Sparepart::orderBy('name', 'ASC')->where('groupid','<>','0')
+                ->whereIn('typeid',['0', $type->id])
+                ->where('disabled','0')
+                ->get();
+            $data = [
+                'title' => 'Купить запчасти на '.Str::lower($type->name).' в Алматы, с доставкой по Казахстану',
+                'pagetitle' => 'Книга для гостей',
+                'spareparts' => $spareparts,
+                'subparts' => $subparts,
+                'type' => $type,
+                'description' => 'Автозапчасти на '.Str::lower($type->name).' по выгодным ценам. Широкий ассортимент, оперативный подбор. Доставка по Казахстану, бесплатная доставка по Алматы.'
+            ];
+            return view('parts.specsparepart', $data);
+        } catch (\Exception $e) {
+            abort(404);
+        }
     }
 
     public function getBrands($spectype,$specsparepart)
     {
-        $type = Type::with('brands')
-            ->where('additional',$spectype)
-            ->orderBy('name', 'ASC')->get()
-            ->first();
+        try {
+            $type = Type::with('brands')
+                ->where('additional',$spectype)
+                ->orderBy('name', 'ASC')->get()
+                ->first();
 
-        $parts = Sparepart::where('additional',$specsparepart)->first();
+            $parts = Sparepart::where('additional',$specsparepart)->first();
 
-        if ($parts->groupid == 0){
-            $subparts = Sparepart::orderBy('name', 'ASC')->get()
-                ->where('groupid',$parts->id);
-        } else {
-            $subparts = Sparepart::orderBy('name', 'ASC')->get()
-                ->where('groupid',$parts->groupid);
+            if ($parts->groupid == 0){
+                $subparts = Sparepart::orderBy('name', 'ASC')->get()
+                    ->where('groupid',$parts->id);
+            } else {
+                $subparts = Sparepart::orderBy('name', 'ASC')->get()
+                    ->where('groupid',$parts->groupid);
+            }
+            $metadesc = $parts->name.' на '.Str::lower($type->name).' по выгодной цене. Широкий ассортимент, оперативный подбор. Доставка по Казахстану, бесплатная доставка по Алматы.';
+            $data = [
+                'title' => 'Купить '.Str::lower($parts->name).' на '.Str::lower($type->name).' в Алматы',
+                'type' => $type,
+                'subparts' => $subparts,
+                'parts' => $parts,
+                'description' => $metadesc
+            ];
+            return view('parts.specbrand', $data);
+        } catch (\Exception $e) {
+            abort(404);
         }
-        $metadesc = $parts->name.' на '.Str::lower($type->name).' по выгодной цене. Широкий ассортимент, оперативный подбор. Доставка по Казахстану, бесплатная доставка по Алматы.';
-        $data = [
-            'title' => 'Купить '.Str::lower($parts->name).' на '.Str::lower($type->name).' в Алматы',
-            'type' => $type,
-            'subparts' => $subparts,
-            'parts' => $parts,
-            'description' => $metadesc
-        ];
-        return view('parts.specbrand', $data);
+
     }
 
     public function getSpecmodels($spectype,$specsparepart,$specbrand)
     {
-        $part = Sparepart::where('additional',$specsparepart)->first();
-        $type = Type::where('additional',$spectype)->first();
-        $brand = Brand::where('additional',$specbrand)->first();
-        $metadesc = 'Широкий ассортимент, оперативный подбор. '.Str::lower($part->name).' на '.Str::lower($type->name).' '.$brand->name.' по выгодной цене. Доставка по Алматы и всему Казахстану';
-        $data = [
-            'title' =>'Купить '.Str::lower($part->name).' на '.Str::lower($type->name).' '.$brand->name.' в Алматы',
-            'part' => $part,
-            'type' => $type,
-            'brand' => $brand,
-            'description' => $metadesc
-        ];
-        return view('parts.specmodel', $data);
+        try {
+            $part = Sparepart::where('additional', $specsparepart)->first();
+            $type = Type::where('additional', $spectype)->first();
+            $brand = Brand::where('additional', $specbrand)->first();
+            $metadesc = 'Широкий ассортимент, оперативный подбор. ' . Str::lower($part->name) . ' на ' . Str::lower($type->name) . ' ' . $brand->name . ' по выгодной цене. Доставка по Алматы и всему Казахстану';
+            $data = [
+                'title' => 'Купить ' . Str::lower($part->name) . ' на ' . Str::lower($type->name) . ' ' . $brand->name . ' в Алматы',
+                'part' => $part,
+                'type' => $type,
+                'brand' => $brand,
+                'description' => $metadesc
+            ];
+            return view('parts.specmodel', $data);
+        } catch (\Exception $e) {
+            abort(404);
+        }
     }
     public function request($sparepart,$carbrand,$carmodel)
     {
+        try {
         $carmodels = Carmodel::where('additional',$carmodel)->first();
         $parts = Sparepart::where('additional',$sparepart)->first();
         $markal = Carbrand::where('additional',$carbrand)
@@ -120,5 +142,8 @@ class SparepartController extends Controller
             'description' => $metadesc
         ];
         return view('catalog.carmodel', $data);
+        } catch (\Exception $e) {
+            abort(404);
+        }
     }
 }

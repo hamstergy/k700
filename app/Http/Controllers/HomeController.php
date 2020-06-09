@@ -11,6 +11,7 @@ class HomeController extends Controller
 {
     public function index()
     {
+        try {
         $vehicles = Vehicle::inRandomOrder()->limit(6)
             ->orderBy('name', 'ASC')
             ->has('type')
@@ -23,5 +24,8 @@ class HomeController extends Controller
             'description' => 'Ищите спецтехнику по выгодным ценам? Широкий ассортимент техники и запчастей на спецтехнику, оперативный подбор. Доставка по Казахстану.'
         ];
         return view('home',$data);
+        } catch (\Exception $e) {
+            abort(404);
+        }
     }
 }
