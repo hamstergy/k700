@@ -123,6 +123,23 @@
     }
 
     </style>
+    <!-- Global site tag (gtag.js) - Google Ads: 991462761 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-991462761"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'AW-991462761');
+    </script>
+    <!-- Event snippet for Page view conversion page -->
+    <script>
+        gtag('event', 'conversion', {
+            'send_to': 'AW-991462761/64StCLT6mtcBEOmK4tgD',
+            'value': 0.06,
+            'currency': 'USD'
+        });
+    </script>
 </head>
 <body class="pushable">
     <!-- Following Menu -->
