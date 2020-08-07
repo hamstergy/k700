@@ -23,6 +23,29 @@
 
                     <p>{{$part->name}} @if($brand->description != ''){{$brand->description}} @else на {{ Illuminate\Support\Str::lower($type->name) }} {{$brand->name}} @endif в наличии и под заказ. Доставка от 3 дней по всему Казахстану. Мы предлагаем большой выбор запчастей на японские и китайские вилочные погрузчики. Вы можете заказать {{ Illuminate\Support\Str::lower($part->name) }} оправив заявку, менеджер перезвонит и уточнит детали.</p>
 
+              {{--Schema--}}
+              <div itemtype="http://schema.org/Product" itemscope>
+                {{--<meta itemprop="mpn" content="{{explode(' ', $vehicle->name)[1]}}" />--}}
+                <meta itemprop="name" content="{{$part->name}} на {{ Illuminate\Support\Str::lower($type->name) }} {{$brand->name}}" />
+                {{--<link itemprop="image" href="/images/spectehnika/{{$vehicle->image}}" />--}}
+                <meta itemprop="description" content="{{ $brand->description }}" />
+                <div itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
+                  <link itemprop="url" href="{{Request::url()}}" />
+                  <meta itemprop="availability" content="https://schema.org/PreOrder" />
+                  <meta itemprop="priceCurrency" content="KZT" />
+                  <meta itemprop="itemCondition" content="https://schema.org/UsedCondition" />
+                  {{--<meta itemprop="price" content="{{ number_format($vehicle->price,0,'.','') }}" />--}}
+                  <meta itemprop="priceValidUntil" content="{{ now()->year }}-12-31" />
+                  <div itemprop="seller" itemtype="http://schema.org/Organization" itemscope>
+                    <meta itemprop="name" content='ИП "PARTS GROUP"' />
+                  </div>
+                </div>
+                <meta itemprop="sku" content="{{$part->id}}" />
+                <div itemprop="brand" itemtype="http://schema.org/Brand" itemscope>
+                  <meta itemprop="name" content="{{$brand->name}}" />
+                </div>
+              </div>
+              {{--Schema--}}
                 <div class="modal-header">
                     <h4 class="modal-title">1. Осталось заполнить телефон и отправляйте заявку</h4>
                     <h4 class="modal-title">2. В течении нескольких минут с вами свяжется менеджер и сообщит стоимость детали и наличие</h4>
