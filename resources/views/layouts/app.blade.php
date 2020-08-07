@@ -252,7 +252,7 @@
                         <img itemprop="logo" src="/images/partsgroup.png" alt="partsgroup logo" style="display:none;">
                         <img itemprop="image" src="/images/partsgroup.png" alt="partsgroup logo" style="display:none;">
                         <a href="/" itemprop="url" style="display:none;">k700.asia</a>
-                        <span itemprop="priceRange">$40 - $2000</span>
+                        <span itemprop="priceRange" style="display:none;">$40 - $2000</span>
                     </p>
                 </div>
               </address>
