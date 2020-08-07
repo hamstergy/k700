@@ -19,14 +19,40 @@
         <h2>Цена: {{ number_format($vehicle->price, 0, ',', ' ')}} тенге</h2>
 
         {{--</h1>--}}
+
+        {{--Schema--}}
+
+      <div itemtype="http://schema.org/Product" itemscope>
+        <meta itemprop="mpn" content="{{explode(' ', $vehicle->name)[1]}}" />
+        <meta itemprop="name" content="{{$vehicle->type->name.' '.$vehicle->name.' '.$vehicle->year}}" />
+        <link itemprop="image" href="/images/spectehnika/{{$vehicle->image}}" />
+        <meta itemprop="description" content="{{ $vehicle->description }}" />
+        <div itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
+          <link itemprop="url" href="{{Request::url()}}" />
+          <meta itemprop="availability" content="https://schema.org/InStock" />
+          <meta itemprop="priceCurrency" content="KZT" />
+          <meta itemprop="itemCondition" content="https://schema.org/UsedCondition" />
+          <meta itemprop="price" content="{{ number_format($vehicle->price,0,'.','') }}" />
+          {{--<meta itemprop="priceValidUntil" content="2020-11-20" />--}}
+          <div itemprop="seller" itemtype="http://schema.org/Organization" itemscope>
+            <meta itemprop="name" content='ИП "PARTS GROUP"' />
+          </div>
+        </div>
+        <meta itemprop="sku" content="{{$vehicle->id}}" />
+        <div itemprop="brand" itemtype="http://schema.org/Brand" itemscope>
+          <meta itemprop="name" content="{{$vehicle->brand->name}}" />
+        </div>
+      </div>
+        {{--Schema--}}
         <div class="ui two column stackable grid container">
             <div class="ten wide column">
                 <div class="row">
                     <div class="ui items">
                     </div>
                     <div>
-                        <img class="ui fluid image" src="/images/spectehnika/{{$vehicle->image}}" alt="{{$vehicle->type->name}} {{ $vehicle->name }} за {{ number_format($vehicle->price,0,'.',' ') }} тенге">
-
+                        <img class="ui fluid image"
+                             src="/images/spectehnika/{{$vehicle->image}}"
+                             alt="{{$vehicle->type->name}} {{ $vehicle->name }} за {{ number_format($vehicle->price,0,'.',' ') }} тенге">
                         <p style="padding: 10px 0;">{!! $vehicle->description !!}</p>
                     </div>
                 </div>
