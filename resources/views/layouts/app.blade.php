@@ -239,18 +239,23 @@
                     <a class="item" href="tel:87057784727">+7 (705) 778-4727</a>
                 </div>
             </div>
-            <div class="six wide column">
+            <div class="six wide column" itemscope="" itemtype="http://schema.org/LocalBusiness">
+              <address>
                 <h4 class="ui inverted header">Адрес</h4>
                 <div class="ui inverted" >
                     <p style="line-height: 1.6em;">
-                        ИП "PARTS GROUP"<br>
-                        Республика Казахстан, г. Алматы<br>
-                        Илийский тракт, 37A<br>
-                        <a href="tel:+77781400610">+7 (778) 140 0610</a><br>
-                        <a href="mailto:info@partsgroup.kz">info@partsgroup.kz</a>
+                        <span itemprop="name">ИП "PARTS GROUP"</span><br>
+                        <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">Республика <span itemprop="addressCountry">Казахстан</span>,<br>г. <span itemprop="addressLocality">Алматы</span>
+                        <span itemprop="streetAddress">Илийский тракт, 37A</span></div>
+                        <a href="tel:+77781400610"><span itemprop="telephone">+7 (778) 140 0610</span></a><br>
+                        <a href="mailto:info@partsgroup.kz"><span itemprop="email">info@partsgroup.kz</span></a>
+                        <img itemprop="logo" src="/images/partsgroup.png" alt="partsgroup logo" style="display:none;">
+                        <img itemprop="image" src="/images/partsgroup.png" alt="partsgroup logo" style="display:none;">
+                        <a href="/" itemprop="url" style="display:none;">k700.asia</a>
+                        <span itemprop="priceRange">$40 - $2000</span>
                     </p>
-
                 </div>
+              </address>
             </div>
             </div>
         </div>

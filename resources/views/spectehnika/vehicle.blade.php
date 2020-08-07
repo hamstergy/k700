@@ -51,7 +51,6 @@
                         </tr>
                     </table>
                 </div>
-
                 <div class="ui segment" itemscope="" itemtype="http://schema.org/LocalBusiness">
                     <address>
                         <h4 class="modal-title">Контакты</h4>
@@ -65,11 +64,10 @@
                             <img itemprop="logo" src="/images/partsgroup.png" alt="partsgroup logo" style="display:none;">
                             <img itemprop="image" src="/images/partsgroup.png" alt="partsgroup logo" style="display:none;">
                             <a href="/" itemprop="url" style="display:none;">k700.asia</a>
+                            <span itemprop="priceRange">$40 - $2000</span>
                         </p>
                     </address>
-
                 </div>
-
                 <div class="contact-form">
                     <div class="modal-header" style="padding: 15px 0;">
                         <h4 class="modal-title">Оставьте заявку</h4>
