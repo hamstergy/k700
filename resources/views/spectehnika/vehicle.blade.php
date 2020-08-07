@@ -52,15 +52,22 @@
                     </table>
                 </div>
 
-                <div class="ui segment">
-                    <h4 class="modal-title">Контакты</h4>
-                    <p style="line-height: 1.7em;">
-                        ИП "PARTS GROUP"<br>
-                        Республика Казахстан, г. Алматы<br>
-                        Илийский тракт, 37A<br>
-                        <a href="tel:+77781400610">+7 (778) 140 0610</a><br>
-                        <a href="mailto:info@partsgroup.kz">info@partsgroup.kz</a>
-                    </p>
+                <div class="ui segment" itemscope="" itemtype="http://schema.org/LocalBusiness">
+                    <address>
+                        <h4 class="modal-title">Контакты</h4>
+                        <p style="line-height: 1.7em;">
+                            <span itemprop="name">ИП "PARTS GROUP"</span><br>
+                            <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">Республика <span itemprop="addressCountry">Казахстан</span>,<br>г. <span itemprop="addressLocality">Алматы</span>
+                            <span itemprop="streetAddress">Илийский тракт, 37A</span></div>
+                            <a href="tel:+77781400610"><span itemprop="telephone">+7 (778) 140-0610</span></a><br>
+                            <a href="tel:+77057784727"><span itemprop="telephone">+7 (705) 778-4727</span></a><br>
+                            <a href="mailto:info@partsgroup.kz"><span itemprop="email">info@partsgroup.kz</span></a>
+                            <img itemprop="logo" src="/images/partsgroup.png" alt="partsgroup logo" style="display:none;">
+                            <img itemprop="image" src="/images/partsgroup.png" alt="partsgroup logo" style="display:none;">
+                            <a href="/" itemprop="url" style="display:none;">k700.asia</a>
+                        </p>
+                    </address>
+
                 </div>
 
                 <div class="contact-form">
