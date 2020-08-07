@@ -34,7 +34,7 @@
                   <meta itemprop="availability" content="https://schema.org/PreOrder" />
                   <meta itemprop="priceCurrency" content="KZT" />
                   <meta itemprop="itemCondition" content="https://schema.org/UsedCondition" />
-                  <meta itemprop="price" content="$" />
+                  <meta itemprop="price" content="1000" />
                   <meta itemprop="priceValidUntil" content="{{ now()->year }}-12-31" />
                   <div itemprop="seller" itemtype="http://schema.org/Organization" itemscope>
                     <meta itemprop="name" content='ИП "PARTS GROUP"' />
