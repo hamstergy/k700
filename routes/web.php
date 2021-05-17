@@ -38,6 +38,8 @@ Route::get('tyres/', ['uses' => 'TyreController@index', 'as' => 'tyres']);
 Route::get('tyres/{spectype}/', ['uses' => 'TyreController@getSpectyres', 'as' => 'tyres.tyres']);
 Route::post('tyres/{spectype}/', ['uses' => 'TyreController@getSpectyres', 'as' => 'tyres.tyres']);
 
+Route::get('repair/',['uses' => 'RepairController@index', 'as' => 'repair']);
+
 Route::post('request','RequestController@getRequestForm');
 Route::post('requestspec','RequestController@getRequestFormParts');
 Route::post('requestspectyres','RequestController@getRequestFormSpecTyres');
@@ -50,6 +52,5 @@ Route::get('/sitemap.xml', 'SitemapController@index');
 Route::get('/sitemap/posts.xml', 'SitemapController@posts');
 Route::get('/sitemap/spectehnika.xml', 'SitemapController@spectehnika');
 Route::get('/sitemap/parts.xml', 'SitemapController@parts');
-Route::get('/sitemap/tyres.xml', 'SitemapController@tyres');
 Route::get('/sitemap/tyres.xml', 'SitemapController@tyres');
 Route::get('/turbo/vehicles.xml', 'YandexTurboPages@index');
