@@ -13,6 +13,8 @@
             <a class="item {{ Route::currentRouteName() == 'spectehnika/*' || Route::currentRouteName() == 'spectehnika' ? 'active' : '' }}" href="{{ route('spectehnika') }}">Спецтехника</a>
             <a class="item {{ Route::currentRouteName() == 'parts/*' || Route::currentRouteName() == 'parts' ? 'active' : '' }}" href="{{ route('parts') }}">Запасные части</a>
             <a class="item {{ Route::currentRouteName() == 'tyres/*' || Route::currentRouteName() == 'tyres' ? 'active' : '' }}" href="{{ route('tyres') }}">Шины</a>
+            <a class="item {{ Route::currentRouteName() == 'repair/*' || Route::currentRouteName() == 'repair' ? 'active' : '' }}" href="{{ route('repair') }}">Ремонт</a>
+
                 {{-- <a class="item">Сервис</a> --}}
             <h1 class="item right floated" style="font-size: 1.2em;">Cпецтехника и запасные части</h1>
         </div>
