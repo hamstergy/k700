@@ -149,6 +149,7 @@
         <a class="item {{ Request::is('spectehnika/*')  || Request::is('spectehnika') ? 'active' : '' }}" href="{{ route('spectehnika') }}">Спецтехника</a>
         <a class="item {{ Request::is('parts/*') || Request::is('parts')  ? 'active' : '' }}" href="{{ route('parts') }}">Запасные части</a>
         <a class="item {{ Request::is('tyres/*')  || Request::is('tyres')  ? 'active' : '' }}" href="{{ route('tyres') }}">Шины</a>
+        <a class="item {{ Request::is('repair/*')  || Request::is('repair')  ? 'active' : '' }}" href="{{ route('repair') }}">Ремонт</a>
 {{-- <a class="item {{ Route::currentRouteName() == 'specservice' ? 'active' : '' }}" href="{{ route('specservice') }}">Сервис</a> --}}
         {{-- <div class="right menu">
           <div class="item">
@@ -167,7 +168,8 @@
         <a class="item {{ Request::is('spectehnika/*')  || Request::is('spectehnika') ? 'active' : '' }}" href="{{ route('spectehnika') }}">Спецтехника</a>
         <a class="item {{ Request::is('parts/*') || Request::is('parts')  ? 'active' : '' }}" href="{{ route('parts') }}">Запасные части</a>
         <a class="item {{ Request::is('tyres/*')  || Request::is('tyres')  ? 'active' : '' }}" href="{{ route('tyres') }}">Шины</a>
-
+        <a class="item {{ Request::is('repair/*')  || Request::is('repair')  ? 'active' : '' }}" href="{{ route('repair') }}">Ремонт</a>
+        
         {{-- <a class="item">Сервис</a> --}}
         {{-- <a class="item">Login</a>
         <a class="item">Signup</a> --}}
@@ -188,6 +190,7 @@
                     <a class="item {{ Request::is('spectehnika/*')  || Request::is('spectehnika') ? 'active' : '' }}" href="{{ route('spectehnika') }}">Спецтехника</a>
                     <a class="item {{ Request::is('parts/*') || Request::is('parts')  ? 'active' : '' }}" href="{{ route('parts') }}">Запасные части</a>
                     <a class="item {{ Request::is('tyres/*')  || Request::is('tyres')  ? 'active' : '' }}" href="{{ route('tyres') }}">Шины</a>
+                    <a class="item {{ Request::is('repair/*')  || Request::is('repair')  ? 'active' : '' }}" href="{{ route('repair') }}">Ремонт</a>
                     <div class="toc item right">K700.ASIA</div>
                     <a class="toc item right" href="tel:87272901335"><i class="phone icon"></i></a>
                 </div>
@@ -220,6 +223,7 @@
                 <a class="item {{ Request::is('spectehnika/*')  || Request::is('spectehnika') ? 'active' : '' }}" href="{{ route('spectehnika') }}">Спецтехника</a>
                 <a class="item {{ Request::is('parts/*') || Request::is('parts')  ? 'active' : '' }}" href="{{ route('parts') }}">Запасные части</a>
                 <a class="item {{ Request::is('tyres/*')  || Request::is('tyres')  ? 'active' : '' }}" href="{{ route('tyres') }}">Шины</a>
+                <a class="item {{ Request::is('repair/*')  || Request::is('repair')  ? 'active' : '' }}" href="{{ route('repair') }}">Ремонт</a>
                 {{-- <a class="item">Сервис</a> --}}
                 </div>
             </div>
