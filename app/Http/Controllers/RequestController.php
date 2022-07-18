@@ -7,11 +7,13 @@ use Illuminate\Http\Request;
 class RequestController extends Controller
 {
     public function getRequestFormParts(Request $request){
+        $website = 'Сайт:';
         $phoneFieldset = 'Телефон: ';
         $partsFieldset = "Запчасть: ";
         $typeFieldset = 'Тип спецтехники: ';
         $brandFieldset = 'Марка: ';
         $data = [
+            $website => 'K700.Asia',
             $phoneFieldset => $request->get('telephone'),
             $partsFieldset => $request->get('parts'),
             $typeFieldset => $request->get('type'),
