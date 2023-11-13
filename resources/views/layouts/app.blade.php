@@ -169,7 +169,7 @@
         <a class="item {{ Request::is('parts/*') || Request::is('parts')  ? 'active' : '' }}" href="{{ route('parts') }}">Запасные части</a>
         <a class="item {{ Request::is('tyres/*')  || Request::is('tyres')  ? 'active' : '' }}" href="{{ route('tyres') }}">Шины</a>
         <a class="item {{ Request::is('repair/*')  || Request::is('repair')  ? 'active' : '' }}" href="{{ route('repair') }}">Ремонт</a>
-        
+
         {{-- <a class="item">Сервис</a> --}}
         {{-- <a class="item">Login</a>
         <a class="item">Signup</a> --}}
@@ -250,7 +250,7 @@
                     <p style="line-height: 1.6em;">
                         <span itemprop="name">ИП "PARTS GROUP"</span><br>
                         <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">Республика <span itemprop="addressCountry">Казахстан</span>,<br>г. <span itemprop="addressLocality">Алматы</span>
-                        <span itemprop="streetAddress">Илийский тракт, 37A</span></div>
+                        <span itemprop="streetAddress">Cуюнбая 284 Б, бокс 12а</span></div>
                         <a href="tel:+77781400610"><span itemprop="telephone">+7 (778) 140 0610</span></a><br>
                         <a href="mailto:info@partsgroup.kz"><span itemprop="email">info@partsgroup.kz</span></a>
                         <img itemprop="logo" src="/images/partsgroup.png" alt="partsgroup logo" style="display:none;">

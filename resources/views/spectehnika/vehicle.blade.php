@@ -82,7 +82,7 @@
                         <p style="line-height: 1.7em;">
                             <span itemprop="name">ИП "PARTS GROUP"</span><br>
                             <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">Республика <span itemprop="addressCountry">Казахстан</span>,<br>г. <span itemprop="addressLocality">Алматы</span>
-                            <span itemprop="streetAddress">Илийский тракт, 37A</span></div>
+                            <span itemprop="streetAddress">Cуюнбая 284 Б, бокс 12а</span></div>
                             <a href="tel:+77781400610"><span itemprop="telephone">+7 (778) 140-0610</span></a><br>
                             <a href="tel:+77057784727"><span itemprop="telephone">+7 (705) 778-4727</span></a><br>
                             <a href="mailto:info@partsgroup.kz"><span itemprop="email">info@partsgroup.kz</span></a>
