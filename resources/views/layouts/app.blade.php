@@ -236,11 +236,18 @@
                 <a href="#" class="item">Favorite X-Men</a>
                 </div>
             </div> --}}
-            <div class="four wide column">
+            <div class="three wide column">
                 <h4 class="ui inverted header">Контакты</h4>
                 <div class="ui inverted vertical menu">
                     <a class="item" href="tel:87272901335">+7 (727) 290-1335</a>
                     <a class="item" href="tel:87057784727">+7 (705) 778-4727</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header">Склад</h4>
+                <div class="ui inverted vertical menu">
+                    <a class="item" href="tel:87477309400">+7 (747) 730-9400</a>
+                    <a class="item" href="tel:87059606287">+7 (705) 960-6287</a>
                 </div>
             </div>
             <div class="six wide column" itemscope="" itemtype="http://schema.org/LocalBusiness">
